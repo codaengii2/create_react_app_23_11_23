@@ -22,23 +22,29 @@
 ▪ 11/28 (화)
 
 - 시안 및 라우터 구성 => 컨펌
-- 오늘할일
+- 할일
   => Router 연결, Home ui, header, footer 컴포넌트 ui 구성
-  => MovieBanner, Slide api 연결 및 ui 구성
+  => GlobalStyled 구성
 - detail page 질문
 
 ▪ 11/29 (수)
 
-- router 연결 => 컨펌
+- router 연결, api 연결 => 컨펌
+- 할일
+  => MovieBanner, Slide api 연결 및 ui 구성
+  => Genre page 구성 및 api 연결
 
 ▪ 11/30 (목)
 
-- Home api 연결 => 컨펌
-- 디테일한 연결 상태 및 구성
+- Genre page 연결상태 및 질문 => 컨펌
+- 할일
+  => Login page 구성, not found page 구성
 
 ▪ 12/01 (금)
 
-- 연결 상태 => 컨펌
+- 배포 전 확인 => 컨펌
+- 할일
+  => event 구성
 
 ▪ 12/02 ~ 12/03 (토, 일)
 
