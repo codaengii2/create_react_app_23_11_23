@@ -1,15 +1,40 @@
 import { Link } from "react-router-dom";
-import { Home } from "../pages/home/Home";
-import { Genre } from "../pages/genre/Genre";
-import { Login } from "../pages/login/Login";
-import styled from "styled-components";
 
-const SHeader = styled.div``;
-const MenuWrap = styled.div``;
-const Logo = styled.div``;
-const Tag = styled.div``;
+import styled from "styled-components";
+import { routes } from "../routes";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Layout } from "./Layout";
+
+const SHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #101010;
+  height: 75px;
+  padding: 0 122px;
+`;
+const MenuWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Logo = styled.div`
+  h3 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+`;
+const Tag = styled.div`
+  margin: 0 30px;
+`;
 const My = styled.div``;
-const Search = styled.div``;
+const SearchWrap = styled.div`
+  display: flex;
+`;
+const Search = styled.div`
+  color: #fff;
+  margin-right: 30px;
+`;
 const JoinBtn = styled.div``;
 
 export const Header = () => {
@@ -17,24 +42,32 @@ export const Header = () => {
     <SHeader>
       <MenuWrap>
         <Logo>
-          <Link to={<Home />} />
-          <h3>MovieS</h3>
+          <Link to={routes.home}>
+            <h3>MovieS</h3>
+          </Link>
         </Logo>
         <Tag>
-          <Link to={<Genre />} />
-          <p>태그별 검색</p>
+          <Link to={routes.genre}>
+            <p>태그별 검색</p>
+          </Link>
         </Tag>
         <My>
-          <Link to={<Login />} />
-          <p>내 작품 보관함</p>
+          <Link to={routes.login}>
+            <p>내 작품 보관함</p>
+          </Link>
         </My>
       </MenuWrap>
 
-      <Search></Search>
-      <JoinBtn>
-        <Link to={<Login />} />
-        <p>로그인/가입</p>
-      </JoinBtn>
+      <SearchWrap>
+        <Search>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </Search>
+        <JoinBtn>
+          <Link to={routes.login}>
+            <p>로그인/가입</p>
+          </Link>
+        </JoinBtn>
+      </SearchWrap>
     </SHeader>
   );
 };

@@ -1,15 +1,28 @@
 import styled from "styled-components";
 
-const SFooter = styled.div``;
-const FootWrap = styled.div``;
-const FootMenuWrap = styled.ul``;
-const SnsWrap = styled.ul``;
-const Bottom = styled.select``;
+const SFooter = styled.div`
+  padding: 0 122px;
+`;
+const FootWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const FLogo = styled.div``;
+const FootMenuWrap = styled.ul`
+  display: flex;
+`;
+const SnsWrap = styled.ul`
+  display: flex;
+`;
+const Bottom = styled.select`
+  all: unset;
+`;
 
 export const Footer = () => {
   return (
     <SFooter>
       <FootWrap>
+        <FLogo>MovieS</FLogo>
         <FootMenuWrap>
           <li>회사소개</li>
           <li>고객센터</li>
