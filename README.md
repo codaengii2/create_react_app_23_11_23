@@ -17,21 +17,23 @@
 ▪ 11/27 (월)
 
 - 디자인 시안 => 컨펌
-- TODO List 작성 및 컴포넌트 구성, api 연결
+- 시안 수정 및 라우터 구성
 
 ▪ 11/28 (화)
 
-- api 연결 => 컨펌
-- Home ui 구성
+- 시안 및 라우터 구성 => 컨펌
+- 오늘할일
+  => Router 연결, Home ui, header, footer 컴포넌트 ui 구성
+  => MovieBanner, Slide api 연결 및 ui 구성
+- detail page 질문
 
 ▪ 11/29 (수)
 
-- Home ui => 컨펌
-- header, footer 컴포넌트 ui 및 api 구성
+- router 연결 => 컨펌
 
 ▪ 11/30 (목)
 
-- 컴포넌트 api 연결 => 컨펌
+- Home api 연결 => 컨펌
 - 디테일한 연결 상태 및 구성
 
 ▪ 12/01 (금)
