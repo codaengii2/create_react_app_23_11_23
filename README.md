@@ -121,3 +121,8 @@
 ## 배포
 
 - 깃허브
+
+### npm 설치
+[x] npm i react-router-dom
+[x] npm i styled-components
+[x] npm i styled-reset

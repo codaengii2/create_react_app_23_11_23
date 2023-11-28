@@ -1,6 +1,6 @@
-export const rotes = {
-  home: "",
-  genre: "",
-  detail: "",
-  login: "",
+export const routes = {
+  home: "/",
+  genre: "/genre",
+  detail: "/detail/:id",
+  login: "/login",
 };
