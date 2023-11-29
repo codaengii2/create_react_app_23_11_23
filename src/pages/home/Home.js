@@ -1,11 +1,20 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { nowPlaying } from "../../api";
 import { Layout } from "../../components/Layout";
+import { IMG_URL } from "../../constants";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 
 const MainBanners = styled.section`
   width: 100%;
   height: 909px;
   position: relative;
   padding: 565px 122px 0;
+  background: url(${IMG_URL}/original/${(props) => props.$mainBg}) no-repeat
+    center/cover;
   h1,
   h3,
   p {
@@ -22,6 +31,7 @@ const MainBanners = styled.section`
     margin: 25px 0;
   }
   p {
+    width: 40%;
     font-size: 20px;
     font-weight: 500;
   }
@@ -29,11 +39,15 @@ const MainBanners = styled.section`
 const Bg = styled.div`
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7345063025210083) 0%,
+    rgba(0, 0, 0, 0) 52%
+  );
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
 `;
 
 const NewWrap = styled.div`
@@ -76,12 +90,29 @@ const ConBottom = styled.div`
   align-items: flex-start;
 `;
 
-const PoppularWrap = styled.div``;
+const PoppularWrap = styled.div`
+  margin: 67px 0 130px;
+`;
 const Title = styled.h3`
   color: #222;
+  font-size: 30px;
+  font-weight: 700;
 `;
 const BtnWrap = styled.ul`
   display: flex;
+  margin: 27px 0;
+  li {
+    width: 122px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+  }
 `;
 const DayWrap = styled.div``;
 const WeekWrap = styled.div`
@@ -98,14 +129,50 @@ const RecommendWrap = styled.div`
 `;
 
 export const Home = () => {
+  const [nowResult, setNowResult] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { results: nowData } = await nowPlaying();
+        setNowResult(nowData);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
+  console.log(nowResult);
+  console.log(isLoading);
+
   return (
     <>
-      <MainBanners>
-        <Bg />
-        <h1>영화제목</h1>
-        <h3>영화 부제목</h3>
-        <p>영화 간단소개</p>
-      </MainBanners>
+      {isLoading ? (
+        "loading"
+      ) : (
+        <>
+          (nowResult &&
+          <>
+            <MainBanners $mainBg={nowResult[0]?.backdrop_path}>
+              <Bg />
+              <Swiper
+                modules={[Pagination]}
+                pagination={true}
+                className="mainSwiper"
+              >
+                <SwiperSlide></SwiperSlide>
+              </Swiper>
+              <h1>{nowResult[0]?.title}</h1>
+              <h3>{nowResult[0]?.original_title}</h3>
+              <p>{nowResult[0]?.overview.slice(0, 100) + "..."}</p>
+            </MainBanners>
+          </>
+          )
+        </>
+      )}
+
       <Layout>
         <NewWrap>
           <NewsConWrap>
@@ -130,6 +197,7 @@ export const Home = () => {
             </ConBottom>
           </NewsConWrap>
         </NewWrap>
+
         <PoppularWrap>
           <Title>이번달 코챠 유저들이 가장 많이 본 영화는?</Title>
           <BtnWrap>

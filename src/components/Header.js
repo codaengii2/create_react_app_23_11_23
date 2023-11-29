@@ -16,6 +16,7 @@ const SHeader = styled.header`
   background-color: #101010;
   height: 75px;
   padding: 0 122px;
+  z-index: 1;
 `;
 const MenuWrap = styled.div`
   display: flex;

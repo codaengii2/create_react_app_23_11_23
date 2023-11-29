@@ -134,3 +134,7 @@
 - npm i --save @fortawesome/free-regular-svg-icons
 - npm i --save @fortawesome/free-brands-svg-icons
 - npm i --save @fortawesome/react-fontawesome@latest
+
+[x] npm install node-fetch@2 --save
+[x] npm i react-hook-form
+[x] npm i swiper
