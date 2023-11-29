@@ -4,9 +4,12 @@ import styled from "styled-components";
 import { routes } from "../routes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Layout } from "./Layout";
 
 const SHeader = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +46,7 @@ export const Header = () => {
       <MenuWrap>
         <Logo>
           <Link to={routes.home}>
-            <h3>MovieS</h3>
+            <h3>CoCha</h3>
           </Link>
         </Logo>
         <Tag>
