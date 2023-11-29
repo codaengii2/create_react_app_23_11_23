@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { routes } from "../routes";
 
-const SFooter = styled.div`
+const SFooter = styled.footer`
+  width: 100%;
   padding: 50px 122px;
   height: 187px;
   background-color: #101010;

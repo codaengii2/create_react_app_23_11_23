@@ -5,8 +5,8 @@ import { routes } from "../routes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const SHeader = styled.div`
-  position: absolute;
+const SHeader = styled.header`
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
