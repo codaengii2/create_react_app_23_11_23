@@ -32,12 +32,12 @@
 - router 연결, api 연결 => 컨펌
 - 할일
   => MovieBanner, Slide api 연결 및 ui 구성
-  => Genre page 구성 및 api 연결
 
 ▪ 11/30 (목)
 
-- Genre page 연결상태 및 질문 => 컨펌
+- Home ui 질문 => 컨펌
 - 할일
+  => Genre page 구성 및 api 연결
   => Login page 구성, not found page 구성
 
 ▪ 12/01 (금)

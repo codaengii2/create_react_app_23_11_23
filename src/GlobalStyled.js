@@ -25,6 +25,11 @@ export const GlobalStyled = createGlobalStyle`
     list-style: none;
  }
 
+ img{
+   border: 0;
+   display: block;
+ }
+
  h3, p{
     color: #fff;
  }
