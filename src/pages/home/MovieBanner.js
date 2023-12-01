@@ -34,6 +34,10 @@ const MainBanners = styled.div`
     font-size: 20px;
     font-weight: 500;
   }
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    height: 568px;
+  }
 `;
 const Bg = styled.div`
   width: 100%;

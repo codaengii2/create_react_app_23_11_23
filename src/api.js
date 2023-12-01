@@ -45,3 +45,9 @@ export const videoFile = (videoId) => {
   const videoUrl = baseUrl + `movie/${videoId}/videos?language=ko-KR`;
   return fetch(videoUrl, options).then((res) => res.json());
 };
+
+export const discover = (genNum) => {
+  const discoveractionUrl =
+    baseUrl + `discover/movie?language=ko-KR&with_genres=${genNum}`;
+  return fetch(discoveractionUrl, options).then((res) => res.json());
+};

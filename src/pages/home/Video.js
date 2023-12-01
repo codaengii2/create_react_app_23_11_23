@@ -66,9 +66,9 @@ export const Video = ({ titleName, upResult }) => {
           <iframe
             src="https://www.youtube.com/embed/wm0t8yvDTjE"
             title="&#39;Trolls Band Together&#39; with filmmakers | Academy Conversations"
-            frameborder="0"
+            frameBorder={0}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </VideoSumnail>
         <VideoTitle>

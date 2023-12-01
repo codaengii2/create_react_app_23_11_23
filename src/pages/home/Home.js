@@ -17,15 +17,6 @@ import { Loading } from "../../components/Loading";
 
 const PoppularWrap = styled.div`
   margin: 67px 0 130px;
-  input:nth-child(1):checked ~ .daywrap {
-    display: block;
-  }
-  input:nth-child(2):checked ~ .weekwrap {
-    display: block;
-  }
-  input:nth-child(3):checked ~ .popwrap {
-    display: block;
-  }
 `;
 
 export const Title = styled.h3`
@@ -151,7 +142,7 @@ export const Home = () => {
                 id="dayinput"
                 value="dayinput"
                 name="pop"
-                checked={setSelect === "dayinput"}
+                checked="checked"
                 onChange={handleInput}
               />
               <input
@@ -159,7 +150,7 @@ export const Home = () => {
                 id="weekinput"
                 value="weekinput"
                 name="pop"
-                checked={setSelect === "weekinput"}
+                // checked={setSelect === "weekinput"}
                 onChange={handleInput}
               />
               <input
@@ -167,7 +158,7 @@ export const Home = () => {
                 id="popinput"
                 value="popinput"
                 name="pop"
-                checked={setSelect === "popinput"}
+                // checked={setSelect === "popinput"}
                 onChange={handleInput}
               />
               <BtnWrap>

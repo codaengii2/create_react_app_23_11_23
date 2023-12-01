@@ -19,7 +19,7 @@ const SLogin = styled.div`
 
 const Form = styled.form`
   width: 484px;
-  height: 489px;
+  height: 450px;
   border-radius: 10px;
   background-color: #fff;
   padding: 55px 50px;
@@ -41,7 +41,7 @@ const FormTitle = styled.div`
   p {
     font-size: 20px;
     font-weight: 700;
-    margin: 15px 0 40px;
+    margin: 15px 0 50px;
   }
 `;
 const EmailButton = styled.button`
@@ -65,7 +65,7 @@ const Or = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 26px 0 37px;
+  margin: 30px 0 45px;
   div {
     width: 150px;
     height: 0.5px;
