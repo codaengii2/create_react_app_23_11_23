@@ -3,6 +3,7 @@ import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Loading } from "../../components/Loading";
 import { Title, Img, MTitle } from "./Home";
 
 const RatedWrap = styled.div`
@@ -53,23 +54,25 @@ export const TopRated = ({ topResult, titleName }) => {
     <RatedWrap>
       <Title>{titleName}</Title>
       <Swiper {...params}>
-        {isLoading
-          ? "loading"
-          : topResult && (
-              <>
-                {topResult.map((top, index) => (
-                  <SwiperSlide key={top.id}>
-                    <RatedCon>
-                      <Num>
-                        <p>{index + 1}</p>
-                      </Num>
-                      <Img $movieImg={top.poster_path} />
-                      <MTitle>{top.title}</MTitle>
-                    </RatedCon>
-                  </SwiperSlide>
-                ))}
-              </>
-            )}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          topResult && (
+            <>
+              {topResult.map((top, index) => (
+                <SwiperSlide key={top.id}>
+                  <RatedCon>
+                    <Num>
+                      <p>{index + 1}</p>
+                    </Num>
+                    <Img $movieImg={top.poster_path} />
+                    <MTitle>{top.title}</MTitle>
+                  </RatedCon>
+                </SwiperSlide>
+              ))}
+            </>
+          )
+        )}
       </Swiper>
     </RatedWrap>
   );

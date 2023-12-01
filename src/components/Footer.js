@@ -17,6 +17,7 @@ const SFooter = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 `;
 const FootWrap = styled.div`
   display: flex;

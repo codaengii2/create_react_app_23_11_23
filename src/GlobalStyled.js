@@ -15,6 +15,9 @@ export const GlobalStyled = createGlobalStyle`
     color: #222;
     
  }
+ input{
+   display: none;
+ }
 
  a{
     text-decoration: none;

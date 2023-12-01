@@ -3,7 +3,9 @@ const fetch = require("node-fetch");
 const baseUrl = "https://api.themoviedb.org/3/";
 const nowPlayingUrl = baseUrl + "movie/now_playing?language=ko-KR";
 const upComingUrl = baseUrl + "movie/upcoming?language=ko-KR";
+const popularUrl = baseUrl + "movie/popular?language=ko-KR";
 const trendDayUrl = baseUrl + `trending/movie/day?language=ko-KR`;
+const trendWeekUrl = baseUrl + `trending/movie/week?language=ko-KR`;
 const topRatedUrl = baseUrl + `movie/top_rated?language=ko-KR`;
 
 const options = {
@@ -23,8 +25,16 @@ export const upComing = () => {
   return fetch(upComingUrl, options).then((res) => res.json());
 };
 
+export const popular = () => {
+  return fetch(popularUrl, options).then((res) => res.json());
+};
+
 export const trendDay = () => {
   return fetch(trendDayUrl, options).then((res) => res.json());
+};
+
+export const trendWeek = () => {
+  return fetch(trendWeekUrl, options).then((res) => res.json());
 };
 
 export const topRated = () => {

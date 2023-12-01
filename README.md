@@ -38,13 +38,16 @@
 - Home ui 질문 => 컨펌
 - 할일
   => Genre page 구성 및 api 연결
-  => Login page 구성, not found page 구성
+  => Login page 구성
 
 ▪ 12/01 (금)
 
-- 배포 전 확인 => 컨펌
+- api연결 => 컨펌
 - 할일
-  => event 구성
+  => detail ui 및 연결
+- 질문
+  => input 구성 문제
+  => genre api 연결
 
 ▪ 12/02 ~ 12/03 (토, 일)
 
@@ -138,3 +141,4 @@
 [x] npm install node-fetch@2 --save
 [x] npm i react-hook-form
 [x] npm i swiper
+[x] npm i react-spinners
