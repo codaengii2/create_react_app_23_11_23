@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { nowPlaying } from "../../api";
+import { nowPlaying, search } from "../../api";
 import { Layout } from "../../components/Layout";
 import { Loading } from "../../components/Loading";
 import { Img, MTitle } from "../home/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useForm } from "react-hook-form";
 
 const SubHeader = styled.div`
   margin-top: 75px;
@@ -19,8 +20,15 @@ const SubHeader = styled.div`
     font-size: 30px;
     font-weight: 700;
   }
+  @media screen and (max-width: 1080px) {
+    margin-top: 61px;
+    height: 80px;
+    h3 {
+      font-size: 20px;
+    }
+  }
 `;
-const Search = styled.div`
+const Form = styled.form`
   margin: 50px 0 30px;
   display: flex;
   align-items: center;
@@ -52,25 +60,40 @@ const FilterWrap = styled.div`
   align-items: center;
   h4,
   p {
-    color: #222;
+    color: #9a9a9a;
   }
 `;
-
-const FilterRight = styled.div`
+const SearchWrap = styled.div`
+  margin-top: 50px;
+`;
+const MGTitle = styled.div`
+  font-size: 20px;
+  font-weight: 700;
+`;
+const SearchCon = styled.div`
   width: 100%;
   height: 100%;
-  padding-top: 77px;
-  padding-bottom: 77px;
+  padding-top: 50px;
+  padding-bottom: 150px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 20px;
   row-gap: 116px;
+  @media screen and (max-width: 1080px) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+  }
+  @media screen and (max-width: 960px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 50px;
+  }
 `;
 
 const Con = styled.div``;
 
 const LoadingWrap = styled.div`
-  width: 100vw;
   height: 50vh;
   display: flex;
   justify-content: center;
@@ -78,7 +101,14 @@ const LoadingWrap = styled.div`
 `;
 
 export const Genre = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({ mode: "onSubmit" });
+
   const [nowResult, setNowResult] = useState();
+  const [term, setTerm] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -94,6 +124,16 @@ export const Genre = () => {
     })();
   }, []);
 
+  const searchHandler = async (data) => {
+    const { search: searchQuery } = data;
+    try {
+      const { results } = await search(searchQuery);
+      setTerm(results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   // console.log(nowResult);
   // console.log(isLoading);
 
@@ -103,28 +143,56 @@ export const Genre = () => {
         <h3>찾으시는 영화가 있으신가요?</h3>
       </SubHeader>
       <FilterWrap>
-        <Search>
-          <input type="text" />
-          <button>
+        <Form onSubmit={handleSubmit(searchHandler)}>
+          <input
+            {...register("search", {
+              required: "검색 내용을 입력해주세요.",
+            })}
+            type="text"
+          />
+          <button $isActive={isValid}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
-        </Search>
-        <FilterRight>
+        </Form>
+        <p>{errors?.search?.message}</p>
+        <>
           {isLoading ? (
             <LoadingWrap>
               <Loading />
             </LoadingWrap>
           ) : (
-            <>
-              {nowResult.map((now) => (
-                <Con key={now.id}>
-                  <Img $movieImg={now.poster_path} />
-                  <MTitle>{now.title}</MTitle>
-                </Con>
-              ))}
-            </>
+            <SearchWrap>
+              {term ? (
+                <>
+                  {isLoading ? (
+                    <Loading />
+                  ) : (
+                    <SearchCon>
+                      {term.map((payload) => (
+                        <Con key={payload.id}>
+                          <Img $movieImg={payload.poster_path} />
+                          <MTitle>{payload.title}</MTitle>
+                        </Con>
+                      ))}
+                    </SearchCon>
+                  )}
+                </>
+              ) : (
+                <>
+                  <MGTitle>현재 상영 인기작</MGTitle>
+                  <SearchCon>
+                    {nowResult.map((now) => (
+                      <Con key={now.id}>
+                        <Img $movieImg={now.poster_path} />
+                        <MTitle>{now.title}</MTitle>
+                      </Con>
+                    ))}
+                  </SearchCon>
+                </>
+              )}
+            </SearchWrap>
           )}
-        </FilterRight>
+        </>
       </FilterWrap>
     </Layout>
   );

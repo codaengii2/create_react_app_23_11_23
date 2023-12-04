@@ -33,6 +33,33 @@ const MainBanners = styled.div`
     width: 40%;
     font-size: 20px;
     font-weight: 500;
+    line-height: 25px;
+  }
+  @media screen and (max-width: 1440px) {
+    padding: 500px 122px 0;
+  }
+  @media screen and (max-width: 1080px) {
+    padding: 500px 122px 0;
+    h1 {
+      font-size: 60px;
+    }
+    h3 {
+      font-size: 30px;
+    }
+    p {
+      width: 60%;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    h1 {
+      font-size: 36px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      width: 100%;
+    }
   }
   @media screen and (max-width: 450px) {
     width: 100%;

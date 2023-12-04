@@ -32,24 +32,30 @@ const Num = styled.div`
 `;
 
 const params = {
-  spaceBetween: 30,
+  spaceBetween: 20,
   slidesPerView: 5,
+  breakpoints: {
+    1440: {
+      spaceBetween: 20,
+      slidesPerView: 4.5,
+    },
+    1280: {
+      spaceBetween: 15,
+      slidesPerView: 4,
+    },
+    1080: { spaceBetween: 15, slidesPerView: 3.5 },
+    640: {
+      spaceBetween: 12,
+      slidesPerView: 3.5,
+    },
+    320: {
+      spaceBetween: 10,
+      slidesPerView: 3.2,
+    },
+  },
 };
 
-export const TopRated = ({ topResult, titleName }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
-  // console.log(isLoading);
-
+export const TopRated = ({ topResult, titleName, isLoading }) => {
   return (
     <RatedWrap>
       <Title>{titleName}</Title>

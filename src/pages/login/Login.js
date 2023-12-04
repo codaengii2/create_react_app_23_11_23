@@ -22,7 +22,7 @@ const Form = styled.form`
   height: 450px;
   border-radius: 10px;
   background-color: #fff;
-  padding: 55px 50px;
+  padding: 70px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +41,7 @@ const FormTitle = styled.div`
   p {
     font-size: 20px;
     font-weight: 700;
-    margin: 15px 0 50px;
+    margin: 15px 0 30px;
   }
 `;
 const EmailButton = styled.button`
@@ -54,10 +54,16 @@ const EmailButton = styled.button`
   background-color: #222222;
   border-radius: 10px;
   color: #fff;
-
+  position: relative;
   p {
     color: #fff;
   }
+`;
+const EmailCon = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 37.5px;
+  transform: translate(0, -50%);
 `;
 
 const Or = styled.div`
@@ -111,7 +117,9 @@ export const Login = () => {
           <p>코챠와 함께 다양한 영화를 만나보세요!</p>
         </FormTitle>
         <EmailButton>
-          <FontAwesomeIcon icon={faEnvelope} />
+          <EmailCon>
+            <FontAwesomeIcon icon={faEnvelope} />
+          </EmailCon>
           <p>이메일로 가입하기</p>
         </EmailButton>
         <Or>

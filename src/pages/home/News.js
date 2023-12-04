@@ -19,6 +19,39 @@ const NewsConWrap = styled.div`
     position: relative;
     color: #fff;
   }
+  @media screen and (max-width: 1440px) {
+    height: 500px;
+    &:nth-child(2) {
+      margin: 0 40px;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    height: 400px;
+    &:nth-child(2) {
+      margin: 0 30px;
+    }
+  }
+  @media screen and (max-width: 1080px) {
+    position: relative;
+    top: 0px;
+    height: 300px;
+    margin-top: 50px;
+    &:nth-child(2) {
+      margin: 50px 30px;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    height: 280px;
+    margin-top: 50px;
+    &:nth-child(2) {
+      margin: 50px 15px;
+    }
+  }
+  @media screen and (man-width: 680px) {
+    &:last-child {
+      display: none;
+    }
+  }
 `;
 const ConBg = styled.div`
   width: 100%;
@@ -44,10 +77,53 @@ const ConBottom = styled.div`
   align-items: flex-start;
   p {
     font-weight: 700;
+    line-height: 20px;
   }
   h4 {
     font-size: 20px;
     font-weight: 700;
+  }
+  @media screen and (max-width: 1440px) {
+    height: 150px;
+    padding: 35px 30px;
+    p {
+      font-weight: 500;
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    height: 120px;
+    padding: 22px 25px;
+    h4 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+  @media screen and (max-width: 1080px) {
+    height: 100px;
+    padding: 22px 0;
+    h4 {
+      color: #222;
+    }
+    position: relative;
+    top: 300px;
+    background-color: transparent;
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    top: 300px;
+    padding: 0 0;
+  }
+  @media screen and (max-width: 680px) {
+    top: 290px;
+    padding: 0 0;
   }
 `;
 
@@ -64,7 +140,7 @@ export const News = ({ upResult }) => {
       <NewsConWrap>
         <ConBg $newsBg={upResult[1]?.poster_path} />
         <ConBottom>
-          <p>{upResult[1]?.overview.slice(0, 30)}</p>
+          <p>{upResult[1]?.overview.slice(0, 28)}</p>
           <h4>{upResult[1]?.title}</h4>
         </ConBottom>
       </NewsConWrap>

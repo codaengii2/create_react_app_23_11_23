@@ -51,3 +51,10 @@ export const discover = (genNum) => {
     baseUrl + `discover/movie?language=ko-KR&with_genres=${genNum}`;
   return fetch(discoveractionUrl, options).then((res) => res.json());
 };
+
+export const search = (searchQuery) => {
+  const searchUrl =
+    baseUrl + `search/movie?&query=${searchQuery}?&language=ko-KR`;
+
+  return fetch(searchUrl, options).then((res) => res.json());
+};

@@ -5,6 +5,7 @@ import { routes } from "../routes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
 
 const SHeader = styled.header`
   position: fixed;
@@ -18,6 +19,10 @@ const SHeader = styled.header`
   height: 75px;
   padding: 0 122px;
   z-index: 3;
+  @media screen and (max-width: 960px) {
+    height: 61px;
+    padding: 0 80px;
+  }
 `;
 const MenuWrap = styled.div`
   display: flex;
@@ -43,13 +48,7 @@ const My = styled.div`
 const SearchWrap = styled.div`
   display: flex;
 `;
-// const Search = styled.div`
-//   color: #fff;
-//   margin-right: 30px;
-//   @media screen and (max-width: 1024px) {
-//     display: none;
-//   }
-// `;
+
 const JoinBtn = styled.div`
   @media screen and (max-width: 1024px) {
     display: none;
@@ -57,16 +56,14 @@ const JoinBtn = styled.div`
 `;
 
 const MoWrap = styled.div`
-  input {
-    display: none;
-  }
-  label {
-    color: #fff;
-    font-size: 24px;
-  }
   @media screen and (min-width: 1025px) {
     display: none;
   }
+`;
+
+const MoBtn = styled.div`
+  color: #fff;
+  font-size: 24px;
 `;
 const Bg = styled.div`
   width: 100%;
@@ -76,7 +73,7 @@ const Bg = styled.div`
   top: 0;
   z-index: 3;
   background-color: rgba(59, 59, 59, 0.5);
-  display: none;
+  /* display: none; */
 `;
 const MoMenu = styled.div`
   position: absolute;
@@ -91,7 +88,6 @@ const MoMenu = styled.div`
   p {
     color: #222;
   }
-  display: none;
 `;
 
 const MLogo = styled.div`
@@ -134,6 +130,16 @@ const MMy = styled.div`
 `;
 
 export const Header = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const menuClickHandler = () => {
+    setOpenMenu(!openMenu);
+  };
+
+  const bgClickHandler = () => {
+    setOpenMenu(false);
+  };
+
   return (
     <SHeader>
       <MenuWrap>
@@ -144,7 +150,7 @@ export const Header = () => {
         </Logo>
         <Tag>
           <Link to={routes.genre}>
-            <p>영화 검색</p>
+            <p>영화 찾기</p>
           </Link>
         </Tag>
         <My>
@@ -162,12 +168,15 @@ export const Header = () => {
         </JoinBtn>
       </SearchWrap>
       <MoWrap>
-        <Bg />
-        <input type="checkbox" id="moinput" />
-        <label htmlFor="moinput">
+        <Bg
+          onClick={bgClickHandler}
+          style={{ display: openMenu ? "block" : "none" }}
+        />
+        <MoBtn onClick={menuClickHandler}>
           <FontAwesomeIcon icon={faBars} />
-        </label>
-        <MoMenu>
+        </MoBtn>
+
+        <MoMenu style={{ right: openMenu ? "0" : "-100vw" }}>
           <MLogo>
             <Link to={routes.home}>
               <h3>CoCha</h3>

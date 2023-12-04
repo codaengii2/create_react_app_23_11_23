@@ -36,4 +36,5 @@ export const GlobalStyled = createGlobalStyle`
  h3, p{
     color: #fff;
  }
+
 `;

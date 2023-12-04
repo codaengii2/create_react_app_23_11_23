@@ -18,14 +18,30 @@ const SFooter = styled.footer`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  @media screen and (max-width: 960px) {
+    padding: 50px 60px;
+  }
+
+  @media screen and (max-width: 680px) {
+    padding: 50px 17px;
+    height: auto;
+    align-items: flex-start;
+  }
 `;
 const FootWrap = styled.div`
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const FootMain = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+  }
 `;
 const FLogo = styled.div`
   font-size: 30px;
@@ -43,6 +59,21 @@ const FootMenuWrap = styled.ul`
   li:nth-child(1) {
     margin-left: 56px;
   }
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+    li {
+      margin-left: 0;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    li:nth-child(1) {
+      margin-left: 0;
+      margin-top: 50px;
+    }
+    li:last-child {
+      margin-bottom: 50px;
+    }
+  }
 `;
 const SnsWrap = styled.ul`
   display: flex;
@@ -52,6 +83,9 @@ const SnsWrap = styled.ul`
   }
   li:nth-child(2) {
     margin: 0 18px;
+  }
+  @media screen and (max-width: 680px) {
+    margin-bottom: 20px;
   }
 `;
 const Bottom = styled.select`

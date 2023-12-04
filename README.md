@@ -58,6 +58,15 @@
 
 ▪ 12/04 (월)
 
+<!-- [x] header menu 반응형 -->
+<!-- [x] 모바일 메뉴 클릭시 모바일메뉴 사라지게 -->
+<!-- home 반응형 슬라이드 -->
+<!-- [x] home label 버튼 색깔 -->
+<!-- detail page -->
+<!-- [x] search page -->
+<!-- login page -->
+<!-- pagenotfound -->
+
 - 배포 2차 테스트 => 컨펌
 
 ▪ 12/05 (화)
