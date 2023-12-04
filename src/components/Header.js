@@ -5,7 +5,7 @@ import { routes } from "../routes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const SHeader = styled.header`
   position: fixed;
@@ -19,9 +19,12 @@ const SHeader = styled.header`
   height: 75px;
   padding: 0 122px;
   z-index: 3;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1080px) {
     height: 61px;
-    padding: 0 80px;
+    padding: 0 60px;
+  }
+  @media screen and (max-width: 680px) {
+    padding: 0 17px;
   }
 `;
 const MenuWrap = styled.div`
@@ -32,6 +35,11 @@ const Logo = styled.div`
   h3 {
     font-size: 30px;
     font-weight: 700;
+  }
+  @media screen and (max-width: 450px) {
+    h3 {
+      font-size: 24px;
+    }
   }
 `;
 const Tag = styled.div`
@@ -95,12 +103,22 @@ const MLogo = styled.div`
     font-size: 30px;
     font-weight: 700;
   }
+  @media screen and (max-width: 450px) {
+    h3 {
+      font-size: 24px;
+    }
+  }
 `;
 const MSub = styled.div`
   margin: 15px 0 30px;
   p {
     font-size: 20px;
     font-weight: 500;
+  }
+  @media screen and (max-width: 450px) {
+    p {
+      font-size: 16px;
+    }
   }
 `;
 const MLogin = styled.button`
@@ -114,6 +132,9 @@ const MLogin = styled.button`
   p {
     color: #fff;
   }
+  @media screen and (max-width: 450px) {
+    height: 40px;
+  }
 `;
 const MTag = styled.div`
   margin: 30px 0 18px;
@@ -121,11 +142,21 @@ const MTag = styled.div`
     font-size: 20px;
     font-weight: 500;
   }
+  @media screen and (max-width: 450px) {
+    p {
+      font-size: 16px;
+    }
+  }
 `;
 const MMy = styled.div`
   p {
     font-size: 20px;
     font-weight: 500;
+  }
+  @media screen and (max-width: 450px) {
+    p {
+      font-size: 16px;
+    }
   }
 `;
 

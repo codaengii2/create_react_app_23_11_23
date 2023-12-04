@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Loading } from "../../components/Loading";
 import { Title, Img, MTitle } from "./Home";
+import { Link } from "react-router-dom";
 
 const RatedWrap = styled.div`
   width: 100%;
@@ -13,6 +13,9 @@ const RatedWrap = styled.div`
 const RatedCon = styled.div`
   margin-top: 50px;
   position: relative;
+  @media screen and (max-width: 680px) {
+    margin-top: 15px;
+  }
 `;
 
 const Num = styled.div`
@@ -28,6 +31,20 @@ const Num = styled.div`
   font-family: "Noto Sans KR", sans-serif;
   p {
     font-size: 48px;
+  }
+  @media screen and (max-width: 1080px) {
+    width: 50px;
+    height: 80px;
+    p {
+      font-size: 36px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    p {
+      font-size: 24px;
+    }
+    width: 40px;
+    height: 70px;
   }
 `;
 
@@ -46,11 +63,10 @@ const params = {
     1080: { spaceBetween: 15, slidesPerView: 3.5 },
     640: {
       spaceBetween: 12,
-      slidesPerView: 3.5,
+      slidesPerView: 3.2,
     },
     320: {
-      spaceBetween: 10,
-      slidesPerView: 3.2,
+      slidesPerView: 3,
     },
   },
 };
@@ -71,7 +87,9 @@ export const TopRated = ({ topResult, titleName, isLoading }) => {
                     <Num>
                       <p>{index + 1}</p>
                     </Num>
-                    <Img $movieImg={top.poster_path} />
+                    <Link to={`/detail/${top.id}`}>
+                      <Img $movieImg={top.poster_path} />
+                    </Link>
                     <MTitle>{top.title}</MTitle>
                   </RatedCon>
                 </SwiperSlide>

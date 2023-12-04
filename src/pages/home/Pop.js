@@ -2,9 +2,13 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Img, MTitle, Title } from "./Home";
+import { Link } from "react-router-dom";
 
 const PoppularWrap = styled.div`
   margin: 67px 0 130px;
+  @media screen and (max-width: 450px) {
+    margin: 70px 0;
+  }
 `;
 
 const BtnWrap = styled.div`
@@ -25,6 +29,15 @@ const BtnWrap = styled.div`
   }
   label:last-child {
     margin-right: 0;
+  }
+  @media screen and (max-width: 680px) {
+    label {
+      width: 100px;
+      height: 40px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    margin: 15px 0;
   }
 `;
 
@@ -49,11 +62,10 @@ const params = {
     },
     640: {
       spaceBetween: 12,
-      slidesPerView: 3.5,
+      slidesPerView: 3.2,
     },
     320: {
-      spaceBetween: 10,
-      slidesPerView: 3.2,
+      slidesPerView: 3,
     },
   },
 };
@@ -136,8 +148,10 @@ export const Pop = ({ dayResult, weekResult, popResult, isLoading }) => {
                       {dayResult.map((day) => (
                         <SwiperSlide key={day.id}>
                           <DayWrap className="daywrap">
-                            <Img $movieImg={day.poster_path} />
-                            <MTitle>{day.title}</MTitle>
+                            <Link to={`/detail/${day.id}`}>
+                              <Img $movieImg={day.poster_path} />
+                              <MTitle>{day.title}</MTitle>
+                            </Link>
                           </DayWrap>
                         </SwiperSlide>
                       ))}
@@ -154,8 +168,10 @@ export const Pop = ({ dayResult, weekResult, popResult, isLoading }) => {
                       {weekResult.map((week) => (
                         <SwiperSlide key={week.id}>
                           <WeekWrap className="weekwrap">
-                            <Img $movieImg={week.poster_path} />
-                            <MTitle>{week.title}</MTitle>
+                            <Link to={`/detail/${week.id}`}>
+                              <Img $movieImg={week.poster_path} />
+                              <MTitle>{week.title}</MTitle>
+                            </Link>
                           </WeekWrap>
                         </SwiperSlide>
                       ))}
@@ -173,8 +189,10 @@ export const Pop = ({ dayResult, weekResult, popResult, isLoading }) => {
                       {popResult.map((pop) => (
                         <SwiperSlide key={pop.id}>
                           <PopWrap className="popwrap">
-                            <Img $movieImg={pop.poster_path} />
-                            <MTitle>{pop.title}</MTitle>
+                            <Link to={`/detail/${pop.id}`}>
+                              <Img $movieImg={pop.poster_path} />
+                              <MTitle>{pop.title}</MTitle>
+                            </Link>
                           </PopWrap>
                         </SwiperSlide>
                       ))}

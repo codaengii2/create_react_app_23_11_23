@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
+import { Link } from "react-router-dom";
 
 const NewWrap = styled.div`
   display: flex;
@@ -47,10 +48,11 @@ const NewsConWrap = styled.div`
       margin: 50px 15px;
     }
   }
-  @media screen and (man-width: 680px) {
-    &:last-child {
-      display: none;
-    }
+  @media screen and (max-width: 680px) {
+    height: 250px;
+  }
+  @media screen and (max-width: 450px) {
+    height: 161px;
   }
 `;
 const ConBg = styled.div`
@@ -119,11 +121,17 @@ const ConBottom = styled.div`
 
   @media screen and (max-width: 960px) {
     top: 300px;
-    padding: 0 0;
+    padding: 0;
+    h4 {
+      font-size: 16px;
+      font-weight: 500;
+    }
   }
   @media screen and (max-width: 680px) {
-    top: 290px;
-    padding: 0 0;
+    top: 260px;
+  }
+  @media screen and (max-width: 450px) {
+    top: 170px;
   }
 `;
 
@@ -131,25 +139,31 @@ export const News = ({ upResult }) => {
   return (
     <NewWrap>
       <NewsConWrap>
-        <ConBg $newsBg={upResult[0]?.poster_path} />
-        <ConBottom>
-          <p>{upResult[0]?.overview.slice(0, 30)}</p>
-          <h4>{upResult[0]?.title}</h4>
-        </ConBottom>
+        <Link to={`/detail/${upResult[0].id}`}>
+          <ConBg $newsBg={upResult[0]?.poster_path} />
+          <ConBottom>
+            <p>{upResult[0]?.overview.slice(0, 30)}</p>
+            <h4>{upResult[0]?.title}</h4>
+          </ConBottom>
+        </Link>
       </NewsConWrap>
       <NewsConWrap>
-        <ConBg $newsBg={upResult[1]?.poster_path} />
-        <ConBottom>
-          <p>{upResult[1]?.overview.slice(0, 28)}</p>
-          <h4>{upResult[1]?.title}</h4>
-        </ConBottom>
+        <Link to={`/detail/${upResult[1].id}`}>
+          <ConBg $newsBg={upResult[1]?.poster_path} />
+          <ConBottom>
+            <p>{upResult[1]?.overview.slice(0, 28)}</p>
+            <h4>{upResult[1]?.title}</h4>
+          </ConBottom>
+        </Link>
       </NewsConWrap>
       <NewsConWrap>
-        <ConBg $newsBg={upResult[2]?.poster_path} />
-        <ConBottom>
-          <p>{upResult[2]?.overview.slice(0, 29)}</p>
-          <h4>{upResult[2]?.title}</h4>
-        </ConBottom>
+        <Link to={`/detail/${upResult[2].id}`}>
+          <ConBg $newsBg={upResult[2]?.poster_path} />
+          <ConBottom>
+            <p>{upResult[2]?.overview.slice(0, 29)}</p>
+            <h4>{upResult[2]?.title}</h4>
+          </ConBottom>
+        </Link>
       </NewsConWrap>
     </NewWrap>
   );

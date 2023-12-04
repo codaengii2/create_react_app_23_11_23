@@ -51,6 +51,7 @@ const MainBanners = styled.div`
     }
   }
   @media screen and (max-width: 960px) {
+    padding: 550px 60px 0;
     h1 {
       font-size: 36px;
     }
@@ -61,9 +62,23 @@ const MainBanners = styled.div`
       width: 100%;
     }
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 680px) {
     width: 100%;
     height: 568px;
+    padding: 300px 60px 0;
+    h3 {
+      margin: 10px 0;
+    }
+    p {
+      font-size: 16px;
+      width: 60vw;
+      height: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    padding: 300px 17px 0;
   }
 `;
 const Bg = styled.div`

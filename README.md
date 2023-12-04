@@ -65,7 +65,8 @@
 <!-- detail page -->
 <!-- [x] search page -->
 <!-- login page -->
-<!-- pagenotfound -->
+<!--[x] pagenotfound -->
+<!-- helmet -->
 
 - 배포 2차 테스트 => 컨펌
 
@@ -156,3 +157,4 @@
 [x] npm i react-hook-form
 [x] npm i swiper
 [x] npm i react-spinners
+[x] npm i react-helmet

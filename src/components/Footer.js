@@ -68,10 +68,10 @@ const FootMenuWrap = styled.ul`
     }
     li:nth-child(1) {
       margin-left: 0;
-      margin-top: 50px;
+      margin-top: 30px;
     }
     li:last-child {
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
   }
 `;
@@ -86,6 +86,9 @@ const SnsWrap = styled.ul`
   }
   @media screen and (max-width: 680px) {
     margin-bottom: 20px;
+    li {
+      font-size: 24px;
+    }
   }
 `;
 const Bottom = styled.select`

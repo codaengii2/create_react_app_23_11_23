@@ -7,6 +7,7 @@ import { Img, MTitle } from "../home/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const SubHeader = styled.div`
   margin-top: 75px;
@@ -170,8 +171,10 @@ export const Genre = () => {
                     <SearchCon>
                       {term.map((payload) => (
                         <Con key={payload.id}>
-                          <Img $movieImg={payload.poster_path} />
-                          <MTitle>{payload.title}</MTitle>
+                          <Link to={payload.id}>
+                            <Img $movieImg={payload.poster_path} />
+                            <MTitle>{payload.title}</MTitle>
+                          </Link>
                         </Con>
                       ))}
                     </SearchCon>
@@ -183,8 +186,10 @@ export const Genre = () => {
                   <SearchCon>
                     {nowResult.map((now) => (
                       <Con key={now.id}>
-                        <Img $movieImg={now.poster_path} />
-                        <MTitle>{now.title}</MTitle>
+                        <Link to={now.id}>
+                          <Img $movieImg={now.poster_path} />
+                          <MTitle>{now.title}</MTitle>
+                        </Link>
                       </Con>
                     ))}
                   </SearchCon>

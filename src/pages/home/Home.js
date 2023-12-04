@@ -5,21 +5,25 @@ import { Layout } from "../../components/Layout";
 import { IMG_URL } from "../../constants";
 import "swiper/css";
 import "swiper/css/pagination";
-
 import { MovieBanner } from "./MovieBanner";
 import { News } from "./News";
 import { TopRated } from "./TopRated";
 import { Video } from "./Video";
 import { Loading } from "../../components/Loading";
 import { Pop } from "./Pop";
-// import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { Link } from "react-router-dom";
 
 export const Title = styled.h3`
   color: #222;
   font-size: 30px;
   font-weight: 700;
+
+  @media screen and (max-width: 960px) {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 20px;
+  }
 `;
 
 export const Img = styled.div`
@@ -40,12 +44,12 @@ export const Img = styled.div`
     height: 280px;
   }
   @media screen and (max-width: 640px) {
-    width: 180px;
-    height: 280px;
+    width: 170px;
+    height: 250px;
   }
-  @media screen and (max-width: 320px) {
-    width: 180px;
-    height: 280px;
+  @media screen and (max-width: 450px) {
+    width: 112px;
+    height: 161px;
   }
 `;
 
@@ -55,17 +59,19 @@ export const MTitle = styled.h3`
   margin-top: 25px;
   color: #222;
   line-height: 30px;
+  @media screen and (max-width: 680px) {
+    margin-top: 10px;
+    font-size: 16px;
+  }
 `;
 
 export const Home = () => {
-  // const { videoId } = useParams();
   const [nowResult, setNowResult] = useState();
   const [upResult, setUpResult] = useState();
   const [popResult, setPopResult] = useState();
   const [dayResult, setDayResult] = useState();
   const [weekResult, setWeekResult] = useState();
   const [topResult, setTopResult] = useState();
-  // const [videoResult, setVideoResult] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -88,9 +94,6 @@ export const Home = () => {
 
         const { results: topData } = await topRated();
         setTopResult(topData);
-
-        // const videoData = await videoFile(videoId);
-        // setVideoResult(videoData);
 
         setIsLoading(false);
       } catch (error) {
