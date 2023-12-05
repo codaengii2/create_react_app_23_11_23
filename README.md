@@ -52,23 +52,26 @@
 ▪ 12/02 ~ 12/03 (토, 일)
 
 - PageNotFound ui
-- login page
 - 반응형
-- 배포 1차 테스트
+  <!-- [x] header menu 반응형 -->
+  <!-- [x] 모바일 메뉴 클릭시 모바일메뉴 사라지게 -->
+  <!-- home 반응형 슬라이드 -->
+  <!-- [x] home label 버튼 색깔 -->
+  <!-- detail page -->
+  <!-- [x] search page -->
+  <!-- login page -->
+  <!--[x] pagenotfound -->
+  <!-- helmet -->
 
 ▪ 12/04 (월)
 
-<!-- [x] header menu 반응형 -->
-<!-- [x] 모바일 메뉴 클릭시 모바일메뉴 사라지게 -->
-<!-- home 반응형 슬라이드 -->
-<!-- [x] home label 버튼 색깔 -->
-<!-- detail page -->
-<!-- [x] search page -->
-<!-- login page -->
-<!--[x] pagenotfound -->
-<!-- helmet -->
+- 할일
+  => scrollevent
+  => login page 틀 만들기
+  => 없는 사진 설명 추가하기
+  => helmet 설정
 
-- 배포 2차 테스트 => 컨펌
+- 배포 1차 테스트 => 컨펌
 
 ▪ 12/05 (화)
 

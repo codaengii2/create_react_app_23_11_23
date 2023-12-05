@@ -6,6 +6,8 @@ import { movieDetail } from "../../api";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Loading } from "../../components/Loading";
 import { IMG_URL } from "../../constants";
+import { useScroll } from "../../lib/useScroll";
+import { PageTitle } from "../../components/PageTitle";
 
 const DetailWrap = styled.div`
   height: 100vh;
@@ -147,12 +149,19 @@ const DesTitleRight = styled.div`
 `;
 const DesConRight = styled.div`
   line-height: 20px;
+  @media screen and (max-width: 1080px) {
+    p {
+      overflow-y: scroll;
+      height: 150px;
+    }
+  }
 `;
 
 export const Detail = () => {
   const { id } = useParams();
   const [dataDetail, setDataDetail] = useState();
   const [isloading, setIsLoading] = useState(true);
+  useScroll();
 
   useEffect(() => {
     (async () => {
@@ -167,6 +176,7 @@ export const Detail = () => {
 
   return (
     <>
+      <PageTitle name={"상세"} />
       {isloading ? (
         <Loading />
       ) : (

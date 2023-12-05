@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { PageTitle } from "../../components/PageTitle";
 
 const SubHeader = styled.div`
   margin-top: 75px;
@@ -139,67 +140,70 @@ export const Genre = () => {
   // console.log(isLoading);
 
   return (
-    <Layout>
-      <SubHeader>
-        <h3>찾으시는 영화가 있으신가요?</h3>
-      </SubHeader>
-      <FilterWrap>
-        <Form onSubmit={handleSubmit(searchHandler)}>
-          <input
-            {...register("search", {
-              required: "검색 내용을 입력해주세요.",
-            })}
-            type="text"
-          />
-          <button $isActive={isValid}>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </button>
-        </Form>
-        <p>{errors?.search?.message}</p>
-        <>
-          {isLoading ? (
-            <LoadingWrap>
-              <Loading />
-            </LoadingWrap>
-          ) : (
-            <SearchWrap>
-              {term ? (
-                <>
-                  {isLoading ? (
-                    <Loading />
-                  ) : (
+    <>
+      <PageTitle name={"검색"} />
+      <Layout>
+        <SubHeader>
+          <h3>찾으시는 영화가 있으신가요?</h3>
+        </SubHeader>
+        <FilterWrap>
+          <Form onSubmit={handleSubmit(searchHandler)}>
+            <input
+              {...register("search", {
+                required: "검색 내용을 입력해주세요.",
+              })}
+              type="text"
+            />
+            <button $isActive={isValid}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </button>
+          </Form>
+          <p>{errors?.search?.message}</p>
+          <>
+            {isLoading ? (
+              <LoadingWrap>
+                <Loading />
+              </LoadingWrap>
+            ) : (
+              <SearchWrap>
+                {term ? (
+                  <>
+                    {isLoading ? (
+                      <Loading />
+                    ) : (
+                      <SearchCon>
+                        {term.map((payload) => (
+                          <Con key={payload.id}>
+                            <Link to={`/detail/${payload.id}`}>
+                              <Img $movieImg={payload.poster_path} />
+                              <MTitle>{payload.title}</MTitle>
+                            </Link>
+                          </Con>
+                        ))}
+                      </SearchCon>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <MGTitle>현재 상영 인기작</MGTitle>
                     <SearchCon>
-                      {term.map((payload) => (
-                        <Con key={payload.id}>
-                          <Link to={payload.id}>
-                            <Img $movieImg={payload.poster_path} />
-                            <MTitle>{payload.title}</MTitle>
+                      {nowResult.map((now) => (
+                        <Con key={now.id}>
+                          <Link to={`/detail/${now.id}`}>
+                            <Img $movieImg={now.poster_path} />
+                            <MTitle>{now.title}</MTitle>
                           </Link>
                         </Con>
                       ))}
                     </SearchCon>
-                  )}
-                </>
-              ) : (
-                <>
-                  <MGTitle>현재 상영 인기작</MGTitle>
-                  <SearchCon>
-                    {nowResult.map((now) => (
-                      <Con key={now.id}>
-                        <Link to={now.id}>
-                          <Img $movieImg={now.poster_path} />
-                          <MTitle>{now.title}</MTitle>
-                        </Link>
-                      </Con>
-                    ))}
-                  </SearchCon>
-                </>
-              )}
-            </SearchWrap>
-          )}
-        </>
-      </FilterWrap>
-    </Layout>
+                  </>
+                )}
+              </SearchWrap>
+            )}
+          </>
+        </FilterWrap>
+      </Layout>
+    </>
   );
 };
 

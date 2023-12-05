@@ -11,6 +11,7 @@ import { TopRated } from "./TopRated";
 import { Video } from "./Video";
 import { Loading } from "../../components/Loading";
 import { Pop } from "./Pop";
+import { PageTitle } from "../../components/PageTitle";
 
 export const Title = styled.h3`
   color: #222;
@@ -112,6 +113,7 @@ export const Home = () => {
 
   return (
     <>
+      <PageTitle name={"메인 홈"} />
       {isLoading ? (
         <Loading />
       ) : (

@@ -7,6 +7,7 @@ import {
   faFacebookF,
 } from "@fortawesome/free-brands-svg-icons";
 import { faComment, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { PageTitle } from "../../components/PageTitle";
 
 const SLogin = styled.div`
   width: 100%;
@@ -30,6 +31,16 @@ const Form = styled.form`
   p {
     color: #222;
   }
+  @media screen and (max-width: 960px) {
+    width: 300px;
+    height: 350px;
+    padding: 40px;
+  }
+  @media screen and (max-width: 450px) {
+    width: 300px;
+    height: 350px;
+    padding: 40px 20px;
+  }
 `;
 
 const FormTitle = styled.div`
@@ -42,6 +53,28 @@ const FormTitle = styled.div`
     font-size: 20px;
     font-weight: 700;
     margin: 15px 0 30px;
+  }
+  @media screen and (max-width: 960px) {
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 15px 0 15px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 15px 0 30px;
+    }
   }
 `;
 const EmailButton = styled.button`
@@ -58,6 +91,11 @@ const EmailButton = styled.button`
   p {
     color: #fff;
   }
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+  }
 `;
 const EmailCon = styled.div`
   position: absolute;
@@ -72,10 +110,20 @@ const Or = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 30px 0 45px;
+  white-space: nowrap;
   div {
     width: 150px;
     height: 0.5px;
     background-color: #bbb;
+  }
+  @media screen and (max-width: 960px) {
+    margin: 20px 0;
+    div {
+      width: 80px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    font-size: 14px;
   }
 `;
 const EasyJoinWrap = styled.ul`
@@ -106,45 +154,55 @@ const EasyJoinWrap = styled.ul`
     background-color: #55acee;
     color: #fff;
   }
+  @media screen and (max-width: 960px) {
+    li {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+  }
 `;
 
 export const Login = () => {
   return (
-    <SLogin>
-      <Form>
-        <FormTitle>
-          <h3>CoCha</h3>
-          <p>코챠와 함께 다양한 영화를 만나보세요!</p>
-        </FormTitle>
-        <EmailButton>
-          <EmailCon>
-            <FontAwesomeIcon icon={faEnvelope} />
-          </EmailCon>
-          <p>이메일로 가입하기</p>
-        </EmailButton>
-        <Or>
-          <div></div>
-          <p>또는</p>
-          <div></div>
-        </Or>
-        <EasyJoinWrap>
-          <li>
-            <FontAwesomeIcon icon={faComment} />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faGoogle} />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faFacebookF} />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faTwitter} />
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faApple} />
-          </li>
-        </EasyJoinWrap>
-      </Form>
-    </SLogin>
+    <>
+      <PageTitle name={로그인} />
+      <SLogin>
+        <Form>
+          <FormTitle>
+            <h3>CoCha</h3>
+            <p>코챠와 함께 다양한 영화를 만나보세요!</p>
+          </FormTitle>
+          <EmailButton>
+            <EmailCon>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </EmailCon>
+            <p>이메일로 가입하기</p>
+          </EmailButton>
+          <Or>
+            <div></div>
+            <p>또는</p>
+            <div></div>
+          </Or>
+          <EasyJoinWrap>
+            <li>
+              <FontAwesomeIcon icon={faComment} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faGoogle} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faFacebookF} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faTwitter} />
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faApple} />
+            </li>
+          </EasyJoinWrap>
+        </Form>
+      </SLogin>
+    </>
   );
 };
