@@ -38,9 +38,12 @@ const Form = styled.form`
     padding: 40px;
   }
   @media screen and (max-width: 450px) {
-    width: 300px;
-    height: 350px;
     padding: 40px 20px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 250px;
+    height: 300px;
+    padding: 20px;
   }
 `;
 
@@ -62,8 +65,8 @@ const FormTitle = styled.div`
     }
     p {
       font-size: 18px;
-      font-weight: 700;
-      margin: 15px 0 15px;
+      font-weight: 500;
+      margin: 15px 0;
     }
   }
   @media screen and (max-width: 450px) {
@@ -75,6 +78,11 @@ const FormTitle = styled.div`
       font-size: 16px;
       font-weight: 700;
       margin: 15px 0 30px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    p {
+      margin: 15px 0;
     }
   }
 `;
@@ -93,9 +101,17 @@ const EmailButton = styled.button`
     color: #fff;
   }
   @media screen and (max-width: 960px) {
-    width: 100%;
+    width: 260px;
     height: 50px;
     border-radius: 5px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 210px;
+    height: 45px;
+    border-radius: 5px;
+    p {
+      font-size: 14px;
+    }
   }
 `;
 const EmailCon = styled.div`
@@ -103,6 +119,10 @@ const EmailCon = styled.div`
   top: 50%;
   left: 37.5px;
   transform: translate(0, -50%);
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+    left: 20px;
+  }
 `;
 
 const Or = styled.div`
@@ -137,29 +157,20 @@ const EasyJoinWrap = styled.ul`
     justify-content: center;
     align-items: center;
     font-size: 23px;
-    margin-left: 15px;
+    margin-left: 10px;
   }
-  li:nth-child(1) {
-    background-color: #fee500;
-    margin-left: 0;
-  }
-  li:nth-child(2),
-  li:nth-child(5) {
-    border: 1px solid #ddd;
-  }
-  li:nth-child(3) {
-    background-color: #3b5998;
-    color: #fff;
-  }
-  li:nth-child(4) {
-    background-color: #55acee;
-    color: #fff;
-  }
+
   @media screen and (max-width: 960px) {
     li {
       width: 40px;
       height: 40px;
       font-size: 16px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    li {
+      width: 35px;
+      height: 35px;
     }
   }
 `;
@@ -174,45 +185,45 @@ export const Login = () => {
             <h3>CoCha</h3>
             <p>코챠와 함께 다양한 영화를 만나보세요!</p>
           </FormTitle>
-          <EmailButton>
-            <Link to={"/sign"}>
+          <Link to={"/sign"}>
+            <EmailButton>
               <EmailCon>
                 <FontAwesomeIcon icon={faEnvelope} />
               </EmailCon>
               <p>이메일로 가입하기</p>
-            </Link>
-          </EmailButton>
+            </EmailButton>
+          </Link>
           <Or>
             <div></div>
             <p>또는</p>
             <div></div>
           </Or>
           <EasyJoinWrap>
-            <li>
-              <Link to={"/"}>
+            <Link to={"/"}>
+              <li style={{ backgroundColor: "#fee500" }}>
                 <FontAwesomeIcon icon={faComment} />
-              </Link>
-            </li>
-            <li>
-              <Link to={"/"}>
+              </li>
+            </Link>
+            <Link to={"/"}>
+              <li style={{ border: "1px solid #ddd" }}>
                 <FontAwesomeIcon icon={faGoogle} />
-              </Link>
-            </li>
-            <li>
-              <Link to={"/"}>
+              </li>
+            </Link>
+            <Link to={"/"}>
+              <li style={{ color: "#fff", backgroundColor: "#3b5998" }}>
                 <FontAwesomeIcon icon={faFacebookF} />
-              </Link>
-            </li>
-            <li>
-              <Link to={"/"}>
+              </li>
+            </Link>
+            <Link to={"/"}>
+              <li style={{ color: "#fff", backgroundColor: "#55acee" }}>
                 <FontAwesomeIcon icon={faTwitter} />
-              </Link>
-            </li>
-            <li>
-              <Link to={"/"}>
+              </li>
+            </Link>
+            <Link to={"/"}>
+              <li style={{ border: "1px solid #ddd" }}>
                 <FontAwesomeIcon icon={faApple} />
-              </Link>
-            </li>
+              </li>
+            </Link>
           </EasyJoinWrap>
         </Form>
       </SLogin>

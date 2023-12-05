@@ -59,16 +59,16 @@
   [x] home label 버튼 색깔
   [x] detail page
   [x] search page
-  login page
+  [x] login page
   [x] pagenotfound
   [x] helmet
 
 ▪ 12/04 (월)
 
 - 할일
-  => [x]scrollevent
-  => login page 틀 만들기
-  => [x]없는 사진 설명 추가하기
+  => [x] scrollevent
+  => [x] login page 틀 만들기
+  => [x] 없는 사진 설명 추가하기
 
 - 배포 1차 테스트 => 컨펌
 

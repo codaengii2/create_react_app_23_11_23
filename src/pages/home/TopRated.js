@@ -42,10 +42,10 @@ const Num = styled.div`
   }
   @media screen and (max-width: 480px) {
     p {
-      font-size: 24px;
+      font-size: 20px;
     }
-    width: 40px;
-    height: 70px;
+    width: 35px;
+    height: 50px;
   }
 `;
 
@@ -61,13 +61,21 @@ const params = {
       spaceBetween: 15,
       slidesPerView: 4,
     },
-    1080: { spaceBetween: 15, slidesPerView: 3.5 },
+    1080: {
+      spaceBetween: 15,
+      slidesPerView: 3.5,
+    },
     640: {
       spaceBetween: 12,
       slidesPerView: 3.2,
     },
     320: {
+      spaceBetween: 10,
       slidesPerView: 3,
+    },
+    280: {
+      spaceBetween: 8,
+      slidesPerView: 2.8,
     },
   },
 };

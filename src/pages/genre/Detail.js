@@ -15,12 +15,30 @@ const DetailWrap = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: 100px 0 50px;
+  margin: 150px 0 50px;
   p {
     color: #222;
   }
+  @media screen and (max-width: 1024px) {
+    margin: 200px 0;
+    height: 90vh;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin: 50px 0 10px;
+  }
+  @media screen and (max-width: 680px) {
+    margin: 200px 0 100px;
+    height: 100vh;
+  }
+
   @media screen and (max-width: 450px) {
-    margin: 50px 0 0;
+    margin: 0;
+    height: 80vh;
+  }
+  @media screen and (max-width: 400px) {
+    margin: 100px 0 80px;
+    height: 80vh;
   }
 `;
 
@@ -32,6 +50,10 @@ const DetailCon = styled.div`
   @media screen and (max-width: 960px) {
     height: auto;
   }
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    border-radius: 0;
+  }
 `;
 const DetailTop = styled.div`
   height: 557px;
@@ -39,6 +61,9 @@ const DetailTop = styled.div`
   z-index: 0;
   @media screen and (max-width: 450px) {
     height: 300px;
+  }
+  @media screen and (max-width: 320px) {
+    height: 250px;
   }
 `;
 const DetailImg = styled.div`
@@ -96,6 +121,8 @@ const DetailDes = styled.div`
   }
   @media screen and (max-width: 450px) {
     height: calc(100% - 300px);
+    border-radius: 0;
+    border: 0;
   }
 `;
 const DesLeft = styled.div`

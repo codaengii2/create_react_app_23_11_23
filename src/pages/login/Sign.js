@@ -143,7 +143,7 @@ export const Sign = () => {
             placeholder="이메일 입력"
             style={{ marginTop: "25px", width: "100%" }}
           />
-          <ErrorMessage style={{ marginBottom: "10px" }}>
+          <ErrorMessage style={{ marginBottom: "5px" }}>
             {errors?.useremail?.message}
           </ErrorMessage>
           <Input
@@ -160,9 +160,7 @@ export const Sign = () => {
           />
           <ErrorMessage>{errors?.password?.message}</ErrorMessage>
           <EmailButton $isActive={isValid}>
-            <Link to={"/"}>
-              <p>시작하기</p>
-            </Link>
+            <p>시작하기</p>
           </EmailButton>
         </Form>
       </SLogin>

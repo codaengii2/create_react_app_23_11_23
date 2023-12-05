@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { PageTitle } from "../../components/PageTitle";
 import { IMG_URL } from "../../constants";
+import { BtnTop } from "../../components/BtnTop";
 
 const SubHeader = styled.div`
   margin-top: 75px;
@@ -28,6 +29,11 @@ const SubHeader = styled.div`
     height: 80px;
     h3 {
       font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    h3 {
+      font-size: 18px;
     }
   }
 `;
@@ -55,10 +61,36 @@ const Form = styled.form`
     border-left: 0;
     cursor: pointer;
   }
-  @media screen and (max-width: 960px) {
-    width: 100%;
+  @media screen and (max-width: 1080px) {
     button {
-      width: 50px;
+      width: 40px;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    input {
+      width: 430px;
+    }
+    button {
+      width: 40px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    input {
+      width: 250px;
+    }
+    button {
+      width: 40px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    input {
+      font-size: 16px;
+      width: 200px;
+      height: 35px;
+    }
+    button {
+      width: 30px;
+      height: 35px;
     }
   }
 `;
@@ -78,6 +110,9 @@ const SearchWrap = styled.div`
 const MGTitle = styled.div`
   font-size: 20px;
   font-weight: 700;
+  @media screen and (max-width: 450px) {
+    font-size: 18px;
+  }
 `;
 const SearchCon = styled.div`
   width: 100%;
@@ -88,20 +123,30 @@ const SearchCon = styled.div`
   grid-template-columns: repeat(5, 1fr);
   column-gap: 20px;
   row-gap: 116px;
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 1280px) {
     grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (max-width: 1080px) {
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 50px;
   }
   @media screen and (max-width: 960px) {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 20px;
-    row-gap: 50px;
+  }
+  @media screen and (max-width: 680px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 8px;
   }
   @media screen and (max-width: 450px) {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px;
-    row-gap: 50px;
+    row-gap: 40px;
+    padding-top: 30px;
+  }
+  @media screen and (max-width: 320px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 8px;
+    row-gap: 40px;
   }
 `;
 
@@ -226,6 +271,7 @@ export const Genre = () => {
             )}
           </>
         </FilterWrap>
+        <BtnTop />
       </Layout>
     </>
   );

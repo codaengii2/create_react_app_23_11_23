@@ -67,9 +67,7 @@ export const movieDetail = (id) => {
 export const data = [
   {
     id: 0,
-    title: "이메일로 시작",
-    userEmail: "이메일",
-    userPassword: "비밀번호",
-    button: "로그인",
+    useremail: "cocha@gmail.com",
+    userpassword: "123456789!",
   },
 ];

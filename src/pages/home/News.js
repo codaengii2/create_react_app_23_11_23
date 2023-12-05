@@ -50,9 +50,23 @@ const NewsConWrap = styled.div`
   }
   @media screen and (max-width: 680px) {
     height: 250px;
+
+    &:nth-child(2) {
+      margin: 50px 15px;
+    }
   }
   @media screen and (max-width: 450px) {
     height: 161px;
+    &:nth-child(2) {
+      margin: 50px 10px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    height: 150px;
+    &:nth-child(2) {
+      margin: 50px 8px;
+    }
   }
 `;
 const ConBg = styled.div`

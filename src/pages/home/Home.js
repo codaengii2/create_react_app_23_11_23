@@ -12,6 +12,7 @@ import { Loading } from "../../components/Loading";
 import { Pop } from "./Pop";
 import { PageTitle } from "../../components/PageTitle";
 import { useScroll } from "../../lib/useScroll";
+import { BtnTop } from "../../components/BtnTop";
 
 export const Title = styled.h3`
   color: #222;
@@ -29,18 +30,16 @@ export const Title = styled.h3`
 
 export const Img = styled.div`
   width: 260px;
-  height: 343px;
+  height: 350px;
   background: url(${(props) => props.$movieImg}) no-repeat center/cover;
   @media screen and (max-width: 1280px) {
-    width: 240px;
-    height: 320px;
+    width: 260px;
   }
   @media screen and (max-width: 1080px) {
-    width: 200px;
-    height: 300px;
+    width: 250px;
   }
   @media screen and (max-width: 960px) {
-    width: 180px;
+    width: 190px;
     height: 280px;
   }
   @media screen and (max-width: 640px) {
@@ -48,8 +47,16 @@ export const Img = styled.div`
     height: 250px;
   }
   @media screen and (max-width: 450px) {
-    width: 112px;
+    width: 120px;
     height: 161px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 108px;
+    height: 161px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 80px;
+    height: 150px;
   }
 `;
 
@@ -139,6 +146,7 @@ export const Home = () => {
             />
 
             <Video titleName={"예고편 미리보기!"} upResult={upResult} />
+            <BtnTop />
           </Layout>
         </>
       )}
