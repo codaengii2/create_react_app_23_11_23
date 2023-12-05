@@ -31,8 +31,7 @@ const VideoConWrap = styled.div`
 
 const VideoSumnail = styled.div`
   width: 50%;
-  background: url(${IMG_URL}/original/${(props) => props.$sumnail}) no-repeat
-    left/cover;
+  background: url(${(props) => props.$sumnail}) no-repeat left/cover;
   position: relative;
   z-index: 0;
   @media screen and (max-width: 1080px) {
@@ -166,7 +165,7 @@ export const Video = ({ titleName, upResult }) => {
   }, [upResult]);
 
   const handleThumbnailClick = () => {
-    const YOUTUBE_URL = `https://www.youtube.com/watch?v=${videokey[1].key}`;
+    const YOUTUBE_URL = `https://www.youtube.com/watch?v=${videokey[0].key}`;
     window.open(YOUTUBE_URL, "_blank");
   };
 
@@ -175,7 +174,11 @@ export const Video = ({ titleName, upResult }) => {
       <Title>{titleName}</Title>
       <VideoConWrap>
         <VideoSumnail
-          $sumnail={upResult[1].backdrop_path}
+          $sumnail={
+            upResult[1].backdrop_path
+              ? `${IMG_URL}/original/${upResult[1].backdrop_path}`
+              : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+          }
           onClick={handleThumbnailClick}
         >
           <SumBg />
@@ -185,7 +188,11 @@ export const Video = ({ titleName, upResult }) => {
         </VideoSumnail>
         <VideoTitle>
           <h3>{upResult[1].title}</h3>
-          <p>{upResult[1].overview.slice(0, 80) + "..."}</p>
+          <p>
+            {upResult[1]?.overview
+              ? `${upResult[1].overview.slice(0, 80) + "..."}`
+              : "[줄거리 없음]"}
+          </p>
           <Link to={`/detail/${upResult[1].id}`}>
             <Button>
               <h3>작품 상세보기</h3>

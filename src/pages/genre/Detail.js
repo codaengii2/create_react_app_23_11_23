@@ -44,8 +44,7 @@ const DetailTop = styled.div`
 const DetailImg = styled.div`
   width: 100%;
   height: 100%;
-  background: url(${IMG_URL}/original/${(props) => props.$detailBg}) no-repeat
-    center/cover;
+  background: url(${(props) => props.$detailBg}) no-repeat center/cover;
   position: relative;
 `;
 const Con = styled.div`
@@ -58,6 +57,16 @@ const Con = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 88px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  div p {
+    margin-top: 5px;
+    color: #fff;
+  }
   @media screen and (max-width: 960px) {
     padding: 0 60px;
   }
@@ -183,10 +192,19 @@ export const Detail = () => {
         <DetailWrap>
           <DetailCon>
             <DetailTop>
-              <DetailImg $detailBg={dataDetail?.backdrop_path} />
+              <DetailImg
+                $detailBg={
+                  dataDetail?.backdrop_path
+                    ? `${IMG_URL}/original/${dataDetail.backdrop_path}`
+                    : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+                }
+              />
               <Con>
                 <ConTitle>{dataDetail?.title}</ConTitle>
-                <FontAwesomeIcon icon={faHeart} />
+                <div>
+                  <FontAwesomeIcon icon={faHeart} />
+                  <p>내 작품</p>
+                </div>
               </Con>
             </DetailTop>
             <DetailDes>
@@ -211,7 +229,12 @@ export const Detail = () => {
                   <p>줄거리</p>
                 </DesTitleRight>
                 <DesConRight>
-                  <p>{dataDetail?.overview}</p>
+                  <p>
+                    {/* {dataDetail?.overview || "[줄거리 없음]"} */}
+                    {dataDetail?.overview
+                      ? `${dataDetail?.overview}`
+                      : "[줄거리 없음]"}
+                  </p>
                 </DesConRight>
               </DesRight>
             </DetailDes>

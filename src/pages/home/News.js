@@ -62,8 +62,7 @@ const ConBg = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background: url(${IMG_URL}/w500/${(props) => props.$newsBg}) no-repeat
-    center/cover;
+  background: url(${(props) => props.$newsBg}) no-repeat center/cover;
 `;
 const ConBottom = styled.div`
   width: 100%;
@@ -140,27 +139,57 @@ export const News = ({ upResult }) => {
     <NewWrap>
       <NewsConWrap>
         <Link to={`/detail/${upResult[0].id}`}>
-          <ConBg $newsBg={upResult[0]?.poster_path} />
+          <ConBg
+            $newsBg={
+              upResult[0]?.poster_path
+                ? `${IMG_URL}/w500/${upResult[0]?.poster_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          />
           <ConBottom>
-            <p>{upResult[0]?.overview.slice(0, 30)}</p>
+            <p>
+              {upResult[0]?.overview
+                ? `${upResult[0]?.overview.slice(0, 29)}`
+                : "[줄거리 없음]"}
+            </p>
             <h4>{upResult[0]?.title}</h4>
           </ConBottom>
         </Link>
       </NewsConWrap>
       <NewsConWrap>
         <Link to={`/detail/${upResult[1].id}`}>
-          <ConBg $newsBg={upResult[1]?.poster_path} />
+          <ConBg
+            $newsBg={
+              upResult[1]?.poster_path
+                ? `${IMG_URL}/w500/${upResult[1]?.poster_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          />
           <ConBottom>
-            <p>{upResult[1]?.overview.slice(0, 28)}</p>
+            <p>
+              {upResult[1]?.overview
+                ? `${upResult[1]?.overview.slice(0, 29)}`
+                : "[줄거리 없음]"}
+            </p>
             <h4>{upResult[1]?.title}</h4>
           </ConBottom>
         </Link>
       </NewsConWrap>
       <NewsConWrap>
         <Link to={`/detail/${upResult[2].id}`}>
-          <ConBg $newsBg={upResult[2]?.poster_path} />
+          <ConBg
+            $newsBg={
+              upResult[2]?.poster_path
+                ? `${IMG_URL}/w500/${upResult[2]?.poster_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          />
           <ConBottom>
-            <p>{upResult[2]?.overview.slice(0, 29)}</p>
+            <p>
+              {upResult[2]?.overview
+                ? `${upResult[2]?.overview.slice(0, 29)}`
+                : "[줄거리 없음]"}
+            </p>
             <h4>{upResult[2]?.title}</h4>
           </ConBottom>
         </Link>

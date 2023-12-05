@@ -53,29 +53,31 @@
 
 - PageNotFound ui
 - 반응형
-  <!-- [x] header menu 반응형 -->
-  <!-- [x] 모바일 메뉴 클릭시 모바일메뉴 사라지게 -->
-  <!-- home 반응형 슬라이드 -->
-  <!-- [x] home label 버튼 색깔 -->
-  <!-- detail page -->
-  <!-- [x] search page -->
-  <!-- login page -->
-  <!--[x] pagenotfound -->
-  <!-- helmet -->
+  [x] header menu 반응형
+  [x] 모바일 메뉴 클릭시 모바일메뉴 사라지게
+  [x] home 반응형 슬라이드
+  [x] home label 버튼 색깔
+  [x] detail page
+  [x] search page
+  login page
+  [x] pagenotfound
+  [x] helmet
 
 ▪ 12/04 (월)
 
 - 할일
-  => scrollevent
+  => [x]scrollevent
   => login page 틀 만들기
-  => 없는 사진 설명 추가하기
-  => helmet 설정
+  => [x]없는 사진 설명 추가하기
 
 - 배포 1차 테스트 => 컨펌
 
 ▪ 12/05 (화)
 
-- 컨펌 종료
+- 컨펌 종료 및 배포
+- 로컬 스토리지에 이메일과 비밀번호 저장하는 법
+- 내작품 보관함을 클릭 -> 로그인 -> 내작품 보관함으로
+- 모바일 메뉴 클릭시 메뉴창이 사라지도록
 
 # 기획서
 

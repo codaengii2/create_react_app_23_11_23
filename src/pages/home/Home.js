@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { nowPlaying, topRated, trendDay, upComing } from "../../api";
 import { Layout } from "../../components/Layout";
-import { IMG_URL } from "../../constants";
 import "swiper/css";
 import "swiper/css/pagination";
 import { MovieBanner } from "./MovieBanner";
@@ -12,6 +11,7 @@ import { Video } from "./Video";
 import { Loading } from "../../components/Loading";
 import { Pop } from "./Pop";
 import { PageTitle } from "../../components/PageTitle";
+import { useScroll } from "../../lib/useScroll";
 
 export const Title = styled.h3`
   color: #222;
@@ -30,8 +30,7 @@ export const Title = styled.h3`
 export const Img = styled.div`
   width: 260px;
   height: 343px;
-  background: url(${IMG_URL}/w300/${(props) => props.$movieImg}) no-repeat
-    center/cover;
+  background: url(${(props) => props.$movieImg}) no-repeat center/cover;
   @media screen and (max-width: 1280px) {
     width: 240px;
     height: 320px;
@@ -63,6 +62,7 @@ export const MTitle = styled.h3`
   @media screen and (max-width: 680px) {
     margin-top: 10px;
     font-size: 16px;
+    line-height: 18px;
   }
 `;
 
@@ -74,6 +74,7 @@ export const Home = () => {
   const [weekResult, setWeekResult] = useState();
   const [topResult, setTopResult] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  useScroll();
 
   useEffect(() => {
     (async () => {

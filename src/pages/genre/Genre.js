@@ -9,6 +9,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { PageTitle } from "../../components/PageTitle";
+import { IMG_URL } from "../../constants";
 
 const SubHeader = styled.div`
   margin-top: 75px;
@@ -54,6 +55,12 @@ const Form = styled.form`
     border-left: 0;
     cursor: pointer;
   }
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    button {
+      width: 50px;
+    }
+  }
 `;
 const FilterWrap = styled.div`
   position: relative;
@@ -89,6 +96,11 @@ const SearchCon = styled.div`
   @media screen and (max-width: 960px) {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
+    row-gap: 50px;
+  }
+  @media screen and (max-width: 450px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
     row-gap: 50px;
   }
 `;
@@ -175,7 +187,13 @@ export const Genre = () => {
                         {term.map((payload) => (
                           <Con key={payload.id}>
                             <Link to={`/detail/${payload.id}`}>
-                              <Img $movieImg={payload.poster_path} />
+                              <Img
+                                $movieImg={
+                                  payload.poster_path
+                                    ? `${IMG_URL}/w300/${payload.poster_path}`
+                                    : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+                                }
+                              />
                               <MTitle>{payload.title}</MTitle>
                             </Link>
                           </Con>
@@ -190,7 +208,13 @@ export const Genre = () => {
                       {nowResult.map((now) => (
                         <Con key={now.id}>
                           <Link to={`/detail/${now.id}`}>
-                            <Img $movieImg={now.poster_path} />
+                            <Img
+                              $movieImg={
+                                now.poster_path
+                                  ? `${IMG_URL}/w300/${now.poster_path}`
+                                  : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+                              }
+                            />
                             <MTitle>{now.title}</MTitle>
                           </Link>
                         </Con>

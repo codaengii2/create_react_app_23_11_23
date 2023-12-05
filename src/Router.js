@@ -7,6 +7,7 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { Detail } from "./pages/genre/Detail";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { Sign } from "./pages/login/Sign";
 
 const Router = () => {
   return (
@@ -17,6 +18,7 @@ const Router = () => {
         <Route path={routes.genre} element={<Genre />} />
         <Route path={routes.detail} element={<Detail />} />
         <Route path={routes.login} element={<Login />} />
+        <Route path={routes.sign} element={<Sign />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />

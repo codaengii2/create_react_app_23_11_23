@@ -63,3 +63,13 @@ export const movieDetail = (id) => {
   const detailUrl = baseUrl + `movie/${id}?language=ko-KR`;
   return fetch(detailUrl, options).then((res) => res.json());
 };
+
+export const data = [
+  {
+    id: 0,
+    title: "이메일로 시작",
+    userEmail: "이메일",
+    userPassword: "비밀번호",
+    button: "로그인",
+  },
+];

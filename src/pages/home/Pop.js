@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Img, MTitle, Title } from "./Home";
 import { Link } from "react-router-dom";
+import { IMG_URL } from "../../constants";
 
 const PoppularWrap = styled.div`
   margin: 67px 0 130px;
@@ -149,7 +150,13 @@ export const Pop = ({ dayResult, weekResult, popResult, isLoading }) => {
                         <SwiperSlide key={day.id}>
                           <DayWrap className="daywrap">
                             <Link to={`/detail/${day.id}`}>
-                              <Img $movieImg={day.poster_path} />
+                              <Img
+                                $movieImg={
+                                  day.poster_path
+                                    ? `${IMG_URL}/w300/${day.poster_path}`
+                                    : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+                                }
+                              />
                               <MTitle>{day.title}</MTitle>
                             </Link>
                           </DayWrap>
@@ -169,7 +176,13 @@ export const Pop = ({ dayResult, weekResult, popResult, isLoading }) => {
                         <SwiperSlide key={week.id}>
                           <WeekWrap className="weekwrap">
                             <Link to={`/detail/${week.id}`}>
-                              <Img $movieImg={week.poster_path} />
+                              <Img
+                                $movieImg={
+                                  week.poster_path
+                                    ? `${IMG_URL}/w300/${week.poster_path}`
+                                    : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+                                }
+                              />
                               <MTitle>{week.title}</MTitle>
                             </Link>
                           </WeekWrap>
@@ -190,7 +203,13 @@ export const Pop = ({ dayResult, weekResult, popResult, isLoading }) => {
                         <SwiperSlide key={pop.id}>
                           <PopWrap className="popwrap">
                             <Link to={`/detail/${pop.id}`}>
-                              <Img $movieImg={pop.poster_path} />
+                              <Img
+                                $movieImg={
+                                  pop.poster_path
+                                    ? `${IMG_URL}/w300/${pop.poster_path}`
+                                    : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+                                }
+                              />
                               <MTitle>{pop.title}</MTitle>
                             </Link>
                           </PopWrap>

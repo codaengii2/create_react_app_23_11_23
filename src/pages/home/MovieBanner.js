@@ -11,8 +11,7 @@ const MainBanners = styled.div`
   position: relative;
   z-index: 0;
   padding: 565px 122px 0;
-  background: url(${IMG_URL}/original/${(props) => props.$mainBg}) no-repeat
-    center/cover;
+  background: url(${(props) => props.$mainBg}) no-repeat center/cover;
   h1,
   h3,
   p {
@@ -110,58 +109,128 @@ export const MovieBanner = ({ nowResult }) => {
         }}
       >
         <SwiperSlide key={nowResult[0].id}>
-          <MainBanners $mainBg={nowResult[0].backdrop_path}>
+          <MainBanners
+            $mainBg={
+              nowResult[0].backdrop_path
+                ? `${IMG_URL}/original/${nowResult[0].backdrop_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          >
             <h1>{nowResult[0].title}</h1>
             <h3>{nowResult[0].original_title}</h3>
-            <p>{nowResult[0].overview.slice(0, 100) + "..."}</p>
+            <p>
+              {nowResult[0].overview
+                ? `${nowResult[0].overview.slice(0, 100) + "..."}`
+                : "[줄거리 없음]"}
+            </p>
             <Bg />
           </MainBanners>
         </SwiperSlide>
         <SwiperSlide key={nowResult[1].id}>
-          <MainBanners $mainBg={nowResult[1].backdrop_path}>
+          <MainBanners
+            $mainBg={
+              nowResult[1].backdrop_path
+                ? `${IMG_URL}/original/${nowResult[1].backdrop_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          >
             <h1>{nowResult[1].title}</h1>
             <h3>{nowResult[1].original_title}</h3>
-            <p>{nowResult[1].overview.slice(0, 100) + "..."}</p>
+            <p>
+              {nowResult[1].overview
+                ? `${nowResult[1].overview.slice(0, 100) + "..."}`
+                : "[줄거리 없음]"}
+            </p>
             <Bg />
           </MainBanners>
         </SwiperSlide>
         <SwiperSlide key={nowResult[2].id}>
-          <MainBanners $mainBg={nowResult[2].backdrop_path}>
+          <MainBanners
+            $mainBg={
+              nowResult[2].backdrop_path
+                ? `${IMG_URL}/original/${nowResult[2].backdrop_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          >
             <h1>{nowResult[2].title}</h1>
             <h3>{nowResult[2].original_title}</h3>
-            <p>{nowResult[2].overview.slice(0, 100) + "..."}</p>
+            <p>
+              {nowResult[2].overview
+                ? `${nowResult[2].overview.slice(0, 100) + "..."}`
+                : "[줄거리 없음]"}
+            </p>
             <Bg />
           </MainBanners>
         </SwiperSlide>
         <SwiperSlide key={nowResult[3].id}>
-          <MainBanners $mainBg={nowResult[3].backdrop_path}>
+          <MainBanners
+            $mainBg={
+              nowResult[3].backdrop_path
+                ? `${IMG_URL}/original/${nowResult[3].backdrop_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          >
             <h1>{nowResult[3].title}</h1>
             <h3>{nowResult[3].original_title}</h3>
-            <p>{nowResult[3].overview.slice(0, 100) + "..."}</p>
+            <p>
+              {nowResult[3].overview
+                ? `${nowResult[3].overview.slice(0, 100) + "..."}`
+                : "[줄거리 없음]"}
+            </p>
             <Bg />
           </MainBanners>
         </SwiperSlide>
         <SwiperSlide key={nowResult[4].id}>
-          <MainBanners $mainBg={nowResult[4].backdrop_path}>
+          <MainBanners
+            $mainBg={
+              nowResult[4].backdrop_path
+                ? `${IMG_URL}/original/${nowResult[4].backdrop_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          >
             <h1>{nowResult[4].title}</h1>
             <h3>{nowResult[4].original_title}</h3>
-            <p>{nowResult[4].overview.slice(0, 100) + "..."}</p>
+            <p>
+              {nowResult[4].overview
+                ? `${nowResult[4].overview.slice(0, 100) + "..."}`
+                : "[줄거리 없음]"}
+            </p>
             <Bg />
           </MainBanners>
         </SwiperSlide>
         <SwiperSlide key={nowResult[5].id}>
-          <MainBanners $mainBg={nowResult[5].backdrop_path}>
+          <MainBanners
+            $mainBg={
+              nowResult[5].backdrop_path
+                ? `${IMG_URL}/original/${nowResult[5].backdrop_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          >
             <h1>{nowResult[5].title}</h1>
             <h3>{nowResult[5].original_title}</h3>
-            <p>{nowResult[5].overview.slice(0, 100) + "..."}</p>
+            <p>
+              {nowResult[5].overview
+                ? `${nowResult[5].overview.slice(0, 100) + "..."}`
+                : "[줄거리 없음]"}
+            </p>
             <Bg />
           </MainBanners>
         </SwiperSlide>
         <SwiperSlide key={nowResult[6].id}>
-          <MainBanners $mainBg={nowResult[6].backdrop_path}>
+          <MainBanners
+            $mainBg={
+              nowResult[6].backdrop_path
+                ? `${IMG_URL}/original/${nowResult[6].backdrop_path}`
+                : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+            }
+          >
             <h1>{nowResult[6].title}</h1>
             <h3>{nowResult[6].original_title}</h3>
-            <p>{nowResult[6].overview.slice(0, 100) + "..."}</p>
+            <p>
+              {nowResult[6].overview
+                ? `${nowResult[6].overview.slice(0, 100) + "..."}`
+                : "[줄거리 없음]"}
+            </p>
             <Bg />
           </MainBanners>
         </SwiperSlide>

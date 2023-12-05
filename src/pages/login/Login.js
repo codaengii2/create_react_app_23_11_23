@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faComment, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { PageTitle } from "../../components/PageTitle";
+import { Link } from "react-router-dom";
 
 const SLogin = styled.div`
   width: 100%;
@@ -166,7 +167,7 @@ const EasyJoinWrap = styled.ul`
 export const Login = () => {
   return (
     <>
-      <PageTitle name={로그인} />
+      <PageTitle name={"로그인"} />
       <SLogin>
         <Form>
           <FormTitle>
@@ -174,10 +175,12 @@ export const Login = () => {
             <p>코챠와 함께 다양한 영화를 만나보세요!</p>
           </FormTitle>
           <EmailButton>
-            <EmailCon>
-              <FontAwesomeIcon icon={faEnvelope} />
-            </EmailCon>
-            <p>이메일로 가입하기</p>
+            <Link to={"/sign"}>
+              <EmailCon>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </EmailCon>
+              <p>이메일로 가입하기</p>
+            </Link>
           </EmailButton>
           <Or>
             <div></div>
@@ -186,19 +189,29 @@ export const Login = () => {
           </Or>
           <EasyJoinWrap>
             <li>
-              <FontAwesomeIcon icon={faComment} />
+              <Link to={"/"}>
+                <FontAwesomeIcon icon={faComment} />
+              </Link>
             </li>
             <li>
-              <FontAwesomeIcon icon={faGoogle} />
+              <Link to={"/"}>
+                <FontAwesomeIcon icon={faGoogle} />
+              </Link>
             </li>
             <li>
-              <FontAwesomeIcon icon={faFacebookF} />
+              <Link to={"/"}>
+                <FontAwesomeIcon icon={faFacebookF} />
+              </Link>
             </li>
             <li>
-              <FontAwesomeIcon icon={faTwitter} />
+              <Link to={"/"}>
+                <FontAwesomeIcon icon={faTwitter} />
+              </Link>
             </li>
             <li>
-              <FontAwesomeIcon icon={faApple} />
+              <Link to={"/"}>
+                <FontAwesomeIcon icon={faApple} />
+              </Link>
             </li>
           </EasyJoinWrap>
         </Form>

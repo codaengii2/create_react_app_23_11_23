@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Loading } from "../../components/Loading";
 import { Title, Img, MTitle } from "./Home";
 import { Link } from "react-router-dom";
+import { IMG_URL } from "../../constants";
 
 const RatedWrap = styled.div`
   width: 100%;
@@ -88,7 +89,13 @@ export const TopRated = ({ topResult, titleName, isLoading }) => {
                       <p>{index + 1}</p>
                     </Num>
                     <Link to={`/detail/${top.id}`}>
-                      <Img $movieImg={top.poster_path} />
+                      <Img
+                        $movieImg={
+                          top.poster_path
+                            ? `${IMG_URL}/w300/${top.poster_path}`
+                            : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
+                        }
+                      />
                     </Link>
                     <MTitle>{top.title}</MTitle>
                   </RatedCon>
