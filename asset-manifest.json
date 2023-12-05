@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/codaengii2/create_react_app_23_11_23/tree/main/static/css/main.ac41eca8.css",
-    "main.js": "/codaengii2/create_react_app_23_11_23/tree/main/static/js/main.eb9b8236.js",
+    "main.js": "/codaengii2/create_react_app_23_11_23/tree/main/static/js/main.c673ba85.js",
     "index.html": "/codaengii2/create_react_app_23_11_23/tree/main/index.html",
     "main.ac41eca8.css.map": "/codaengii2/create_react_app_23_11_23/tree/main/static/css/main.ac41eca8.css.map",
-    "main.eb9b8236.js.map": "/codaengii2/create_react_app_23_11_23/tree/main/static/js/main.eb9b8236.js.map"
+    "main.c673ba85.js.map": "/codaengii2/create_react_app_23_11_23/tree/main/static/js/main.c673ba85.js.map"
   },
   "entrypoints": [
     "static/css/main.ac41eca8.css",
-    "static/js/main.eb9b8236.js"
+    "static/js/main.c673ba85.js"
   ]
 }
