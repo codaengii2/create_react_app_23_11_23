@@ -155,11 +155,13 @@ export const Video = ({ titleName, upResult }) => {
   useEffect(() => {
     (async () => {
       try {
-        const videoId = upResult[1].id;
+        const videoId = upResult[0].id;
         const { results: videoResult } = await videoFile(videoId);
         setVideoKey(videoResult);
+        console.log(videoResult);
       } catch (error) {
         console.log(error);
+        setVideoKey(false);
       }
     })();
   }, [upResult]);
@@ -168,15 +170,14 @@ export const Video = ({ titleName, upResult }) => {
     const YOUTUBE_URL = `https://www.youtube.com/watch?v=${videokey[0].key}`;
     window.open(YOUTUBE_URL, "_blank");
   };
-
   return (
     <VideoWrap>
       <Title>{titleName}</Title>
       <VideoConWrap>
         <VideoSumnail
           $sumnail={
-            upResult[1].backdrop_path
-              ? `${IMG_URL}/original/${upResult[1].backdrop_path}`
+            upResult[0].backdrop_path
+              ? `${IMG_URL}/original/${upResult[0].backdrop_path}`
               : "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca"
           }
           onClick={handleThumbnailClick}
@@ -187,13 +188,13 @@ export const Video = ({ titleName, upResult }) => {
           </SumPlay>
         </VideoSumnail>
         <VideoTitle>
-          <h3>{upResult[1].title}</h3>
+          <h3>{upResult[0].title}</h3>
           <p>
-            {upResult[1]?.overview
-              ? `${upResult[1].overview.slice(0, 80) + "..."}`
+            {upResult[0]?.overview
+              ? `${upResult[0].overview.slice(0, 80) + "..."}`
               : "[줄거리 없음]"}
           </p>
-          <Link to={`/detail/${upResult[1].id}`}>
+          <Link to={`/detail/${upResult[0].id}`}>
             <Button>
               <h3>작품 상세보기</h3>
             </Button>
