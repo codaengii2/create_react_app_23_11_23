@@ -150,6 +150,36 @@ const Button = styled.div`
     }
   }
 `;
+
+const Modal = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 500px;
+  height: 500px;
+  background-color: red;
+  /* display: ${(props) => (props.$isVisible ? "block" : "none")}; */
+`;
+const MoCon = styled.div`
+  width: 100%;
+  height: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+const Close = styled.span`
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 100;
+  cursor: pointer;
+  font-size: 20px;
+  color: #222;
+`;
 export const Video = ({ titleName, upResult }) => {
   const [videokey, setVideoKey] = useState();
   useEffect(() => {
@@ -158,7 +188,6 @@ export const Video = ({ titleName, upResult }) => {
         const videoId = upResult[0].id;
         const { results: videoResult } = await videoFile(videoId);
         setVideoKey(videoResult);
-        console.log(videoResult);
       } catch (error) {
         console.log(error);
         setVideoKey(false);
@@ -167,9 +196,26 @@ export const Video = ({ titleName, upResult }) => {
   }, [upResult]);
 
   const handleThumbnailClick = () => {
-    const YOUTUBE_URL = `https://www.youtube.com/watch?v=${videokey[0].key}`;
-    window.open(YOUTUBE_URL, "_blank");
+    let selectedKey = null;
+    if (videokey && videokey.length > 0) {
+      //videokey의 배열이 존재할 때
+      if (videokey[0]?.key) {
+        selectedKey = videokey[0].key;
+      } else if (videokey[1]?.key) {
+        selectedKey = videokey[1].key;
+      }
+    }
+
+    if (selectedKey) {
+      const YOUTUBE_URL = `https://www.youtube.com/watch?v=${selectedKey}`;
+      window.open(YOUTUBE_URL, "_blank");
+    } else {
+      const noVideo =
+        "https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527142.jpg?w=1060&t=st=1701746907~exp=1701747507~hmac=b1bddd4ade08ce6644e65e6194e7f5794031fe5f2cd436ec8cab83f86a8524ca";
+      window.open(noVideo, "_blank");
+    }
   };
+
   return (
     <VideoWrap>
       <Title>{titleName}</Title>
