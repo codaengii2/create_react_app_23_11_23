@@ -66,6 +66,7 @@ const JoinBtn = styled.div`
 const MoWrap = styled.div`
   @media screen and (min-width: 1025px) {
     display: none;
+    position: relative;
   }
 `;
 
@@ -164,7 +165,7 @@ export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const menuClickHandler = () => {
-    setOpenMenu(!openMenu);
+    setOpenMenu(true);
   };
 
   const bgClickHandler = () => {
@@ -194,7 +195,7 @@ export const Header = () => {
       <SearchWrap>
         <JoinBtn>
           <Link to={routes.login}>
-            <p>로그인/가입</p>
+            <p>로그인</p>
           </Link>
         </JoinBtn>
       </SearchWrap>
@@ -217,19 +218,19 @@ export const Header = () => {
             </MSub>
             <Link to={routes.login}>
               <MLogin>
-                <p>로그인/가입</p>
+                <p>로그인</p>
               </MLogin>
             </Link>
-            <MTag>
-              <Link to={routes.genre}>
+            <Link to={routes.genre}>
+              <MTag>
                 <p>영화 검색</p>
-              </Link>
-            </MTag>
-            <MMy>
-              <Link to={routes.login}>
+              </MTag>
+            </Link>
+            <Link to={routes.login}>
+              <MMy>
                 <p>내 작품 보관함</p>
-              </Link>
-            </MMy>
+              </MMy>
+            </Link>
           </MLogo>
         </MoMenu>
       </MoWrap>

@@ -151,35 +151,35 @@ const Button = styled.div`
   }
 `;
 
-const Modal = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  width: 500px;
-  height: 500px;
-  background-color: red;
-  /* display: ${(props) => (props.$isVisible ? "block" : "none")}; */
-`;
-const MoCon = styled.div`
-  width: 100%;
-  height: 100%;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
-const Close = styled.span`
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  z-index: 100;
-  cursor: pointer;
-  font-size: 20px;
-  color: #222;
-`;
+// const Modal = styled.div`
+//   position: fixed;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   z-index: 1000;
+//   width: 500px;
+//   height: 500px;
+//   background-color: red;
+//   /* display: ${(props) => (props.$isVisible ? "block" : "none")}; */
+// `;
+// const MoCon = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// `;
+// const Close = styled.span`
+//   position: absolute;
+//   right: 5px;
+//   top: 5px;
+//   z-index: 100;
+//   cursor: pointer;
+//   font-size: 20px;
+//   color: #222;
+// `;
 export const Video = ({ titleName, upResult }) => {
   const [videokey, setVideoKey] = useState();
   useEffect(() => {
@@ -228,6 +228,12 @@ export const Video = ({ titleName, upResult }) => {
           }
           onClick={handleThumbnailClick}
         >
+          {/* <Modal>
+            <MoCon>
+              <Close></Close>
+              <img src="" />
+            </MoCon>
+          </Modal> */}
           <SumBg />
           <SumPlay>
             <FontAwesomeIcon icon={faPlayCircle} />

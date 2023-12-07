@@ -3,11 +3,12 @@ import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { movieDetail } from "../../api";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { Loading } from "../../components/Loading";
 import { IMG_URL } from "../../constants";
 import { useScroll } from "../../lib/useScroll";
 import { PageTitle } from "../../components/PageTitle";
+// import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const DetailWrap = styled.div`
   height: 100vh;
@@ -66,6 +67,17 @@ const DetailTop = styled.div`
     height: 250px;
   }
 `;
+
+// const BackBtn = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 2;
+//   color: #fff;
+//   width: 20px;
+//   height: 20px;
+//   background-color: red;
+// `;
 const DetailImg = styled.div`
   width: 100%;
   height: 100%;
@@ -87,22 +99,34 @@ const Con = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
+    justify-content: center;
   }
   div p {
-    margin-top: 5px;
+    margin-top: 8px;
     color: #fff;
+    white-space: nowrap;
   }
   @media screen and (max-width: 960px) {
     padding: 0 60px;
   }
   @media screen and (max-width: 680px) {
+    bottom: 30px;
     padding: 0 40px;
+  }
+
+  @media screen and (max-width: 450px) {
+    div p {
+      font-size: 14px;
+    }
   }
 `;
 const ConTitle = styled.div`
   color: #fff;
   font-size: 30px;
   font-weight: 700;
+  @media screen and (max-width: 450px) {
+    font-size: 24px;
+  }
 `;
 const DetailDes = styled.div`
   width: 100%;
@@ -210,6 +234,8 @@ export const Detail = () => {
   }, [id]);
   // console.log(isloading);
 
+  const heartClick = () => {};
+
   return (
     <>
       <PageTitle name={"상세"} />
@@ -219,6 +245,9 @@ export const Detail = () => {
         <DetailWrap>
           <DetailCon>
             <DetailTop>
+              {/* <BackBtn>
+                <FontAwesomeIcon icon={faArrowLeft} />
+              </BackBtn> */}
               <DetailImg
                 $detailBg={
                   dataDetail?.backdrop_path
@@ -229,7 +258,7 @@ export const Detail = () => {
               <Con>
                 <ConTitle>{dataDetail?.title}</ConTitle>
                 <div>
-                  <FontAwesomeIcon icon={faHeart} />
+                  <FontAwesomeIcon icon={faHeart} onClick={heartClick} />
                   <p>내 작품</p>
                 </div>
               </Con>
