@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { PageTitle } from "../../components/PageTitle";
 import { IMG_URL } from "../../constants";
 import { BtnTop } from "../../components/BtnTop";
+import { useScroll } from "../../lib/useScroll";
 
 const SubHeader = styled.div`
   margin-top: 75px;
@@ -193,6 +194,8 @@ export const Genre = () => {
     }
   };
 
+  useScroll();
+
   // console.log(nowResult);
   // console.log(isLoading);
 
@@ -277,4 +280,4 @@ export const Genre = () => {
   );
 };
 
-// => 장르 카테고리 종류 api만 있음
+// => 검색내용이 없을 때 띄우는 대체문구

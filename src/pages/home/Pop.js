@@ -83,7 +83,6 @@ export const Pop = ({ dayResult, weekResult, popResult, isLoading }) => {
   const handleInput = (e) => {
     setSelect(e.target.value);
     setMenuSelect(true);
-    console.log(e);
   };
   return (
     <PoppularWrap>

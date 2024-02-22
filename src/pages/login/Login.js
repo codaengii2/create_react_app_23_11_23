@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faComment, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { PageTitle } from "../../components/PageTitle";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SLogin = styled.div`
   width: 100%;
@@ -176,10 +176,16 @@ const EasyJoinWrap = styled.ul`
 `;
 
 export const Login = () => {
+  let navigate = useNavigate();
+
+  const backClick = () => {
+    navigate.push("/");
+  };
+
   return (
     <>
       <PageTitle name={"로그인"} />
-      <SLogin>
+      <SLogin onClick={backClick}>
         <Form>
           <FormTitle>
             <h3>CoCha</h3>

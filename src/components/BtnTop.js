@@ -6,7 +6,7 @@ const SBtnTop = styled.div`
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 99;
+  z-index: 2;
   background-color: #222;
   border-radius: #ddd;
   color: #fff;
