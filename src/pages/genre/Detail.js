@@ -45,9 +45,9 @@ const DetailWrap = styled.div`
 
 const DetailCon = styled.div`
   width: 80vw;
-  height: 813px;
-  border-radius: 10px;
-  overflow: hidden;
+  /* height: 813px; */
+  /* border-radius: 10px; */
+  /* overflow: hidden; */
   @media screen and (max-width: 960px) {
     height: auto;
   }
@@ -122,7 +122,7 @@ const Con = styled.div`
 `;
 const ConTitle = styled.div`
   color: #fff;
-  font-size: 30px;
+  font-size: 60px;
   font-weight: 700;
   @media screen and (max-width: 450px) {
     font-size: 24px;
@@ -133,9 +133,9 @@ const DetailDes = styled.div`
   height: calc(100% - 557px);
   display: flex;
   padding: 50px 88px 0;
-  border: 1px solid #e9e9e9;
+  /* border: 1px solid #e9e9e9; */
   border-top: 0;
-  border-radius: 0 0 10px 10px;
+  /* border-radius: 0 0 10px 10px; */
   @media screen and (max-width: 960px) {
     padding: 50px 60px;
   }

@@ -53,9 +53,14 @@ const params = {
   spaceBetween: 20,
   slidesPerView: 5,
   breakpoints: {
+    //min-width 기준임
+    1760: {
+      spaceBetween: 20,
+      slidesPerView: 5.5,
+    },
     1440: {
       spaceBetween: 20,
-      slidesPerView: 4.5,
+      slidesPerView: 5.1,
     },
     1280: {
       spaceBetween: 15,
@@ -65,13 +70,17 @@ const params = {
       spaceBetween: 15,
       slidesPerView: 3.5,
     },
-    640: {
-      spaceBetween: 12,
-      slidesPerView: 3.2,
-    },
-    320: {
+    760: {
       spaceBetween: 10,
+      slidesPerView: 4,
+    },
+    640: {
+      spaceBetween: 8,
       slidesPerView: 3,
+    },
+    300: {
+      spaceBetween: 8,
+      slidesPerView: 2.9,
     },
     280: {
       spaceBetween: 8,

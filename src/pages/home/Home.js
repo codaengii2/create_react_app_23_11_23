@@ -29,33 +29,35 @@ export const Title = styled.h3`
 `;
 
 export const Img = styled.div`
-  width: 260px;
+  /* width: 260px; */
+  /* width: 13.541%; */
   height: 350px;
+
   background: url(${(props) => props.$movieImg}) no-repeat center/cover;
-  @media screen and (max-width: 1280px) {
+  /* @media screen and (max-width: 1280px) {
     width: 260px;
   }
   @media screen and (max-width: 1080px) {
     width: 250px;
-  }
+  } */
   @media screen and (max-width: 960px) {
-    width: 190px;
+    /* width: 176px; */
     height: 280px;
   }
   @media screen and (max-width: 640px) {
-    width: 170px;
+    /* width: 183px; */
     height: 250px;
   }
   @media screen and (max-width: 450px) {
-    width: 120px;
-    height: 161px;
+    /* width: 120px; */
+    height: 170px;
   }
   @media screen and (max-width: 400px) {
-    width: 108px;
+    /* width: 100px; */
     height: 161px;
   }
   @media screen and (max-width: 320px) {
-    width: 80px;
+    /* width: 100px; */
     height: 150px;
   }
 `;
